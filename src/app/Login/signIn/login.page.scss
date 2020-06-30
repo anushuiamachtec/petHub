@@ -1,0 +1,318 @@
+.main-container {
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #f4e3e3;
+  height: auto;
+}
+
+.form-control1 {
+  display: block;
+  /*width: 50px;*/
+  /*width: 273px;*/
+  width: 100%;
+  height: 40px;
+  // padding: 3px 18px;
+  padding: 6px 10px;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #8b8888;
+  background-color: #fff;
+  background-image: none;
+  border: white;
+  border-radius: 5px;
+  /*box-shadow:0px 5px 10px grey;*/
+}
+.select-icon {
+  padding: 6px 0px;
+}
+
+.form-control {
+  display: block;
+  width: 50px;
+  height: 50px;
+  padding: 3px 10px !important;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #8b8888;
+  background-color: #fff;
+  background-image: none;
+  border: white;
+  border-radius: 5px;
+  /*box-shadow:0px 5px 10px grey;*/
+  box-shadow: 0 8px 10px -6px grey;
+  display: block;
+  // margin-right: auto;
+  // margin-left: auto;
+}
+.telclass {
+  -webkit-text-security: disc;
+  -moz-webkit-text-security: disc;
+  -moz-text-security: disc;
+}
+.form-control2 {
+  display: block;
+  /*width: 280px;*/
+  width: 100%;
+  padding: 3px 10px !important;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #8b8888;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #fa9aa7;
+  /*background-image: url('../assets/bg/pet_cat.png');*/
+  /*border-color: #2e6da4;*/
+}
+.btn {
+  border: none;
+  height: 96px;
+  width: 96px;
+  border-radius: 50px;
+  display: inline-block;
+  padding: 50px 18px 0px 18px;
+  box-shadow: 0px 5px 10px grey;
+  /*margin-bottom: 0;*/
+  /*font-size: 10px;
+    font-weight: 200;
+    line-height: 1.42857143;*/
+  /*text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;*/
+  cursor: pointer;
+}
+.phone-control {
+  display: block;
+  height: 40px;
+  padding: 3px 5px;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #8b8888;
+  background-color: #fff;
+  background-image: none;
+  border: white;
+  border-radius: 5px;
+}
+.phone-code {
+  width: 100%;
+  margin: 0px 0px;
+  padding: 12px 12px;
+}
+// ion-col.md.hydrated {
+//   //margin-left: 0px !important;
+//   // margin: 0px -17px 0px 0px !important;
+// }
+ion-col.ph-no {
+  //margin-left: 0px !important;
+  margin: 0px 0px 1px 17px !important;
+}
+
+//Responsive CSS Start
+//Nokia Lumia 520
+@media only screen and (min-width: 320px) and (min-height: 533px) {
+  .main-container {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f4e3e3;
+    height: 100%;
+  }
+}
+
+//Apple 5/SE
+@media only screen and (min-width: 320px) and (min-height: 568px) {
+  .main-container {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f4e3e3;
+    height: 100%;
+  }
+}
+
+//Galixy Note 3 //Galaxy Note 2 // Galaxy S3 //Galaxy S5// Blackberry
+@media only screen and (min-width: 360px) and (min-height: 640px) {
+  .main-container {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f4e3e3;
+    height: 100%;
+  }
+}
+
+//Apple 6/7/8
+@media only screen and (min-width: 375px) and (min-height: 667px) {
+  .main-container {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f4e3e3;
+    height: 100%;
+  }
+}
+
+//Apple Iphone X
+@media only screen and (min-width: 375px) and (min-height: 812px) {
+  .main-container {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f4e3e3;
+    height: 100%;
+  }
+}
+
+//LG Optimus -Nexus 4
+@media only screen and (min-width: 384px) and (min-height: 640px) {
+  .main-container {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f4e3e3;
+    height: 100%;
+  }
+}
+
+//Pixel 2
+@media only screen and (min-width: 411px) and (min-height: 731px) {
+  .main-container {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f4e3e3;
+    height: 100%;
+  }
+}
+
+//Pixel 2 XL
+@media only screen and (min-width: 411px) and (min-height: 823px) {
+  .main-container {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f4e3e3;
+    height: 100%;
+  }
+}
+
+//Nexus 5X - Nexus 6P
+@media only screen and (min-width: 412px) and (min-height: 732px) {
+  .main-container {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f4e3e3;
+    height: 100%;
+  }
+}
+
+//Apple Iphone 6/7/8 Plus
+@media only screen and (min-width: 414px) and (min-height: 736px) {
+  .main-container {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f4e3e3;
+    height: 100%;
+  }
+}
+
+//Nokia N9
+@media only screen and (min-width: 480px) and (min-height: 854px) {
+  .main-container {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f4e3e3;
+    height: 100%;
+  }
+}
+
+//Nexus 7
+@media only screen and (min-width: 600px) and (min-height: 960px) {
+  .main-container {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f4e3e3;
+    height: 100%;
+  }
+}
+
+//Kindle Fire HDX ,BLackbery Play Book
+@media only screen and (min-width: 600px) and (min-height: 1024px) {
+  .main-container {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f4e3e3;
+    height: 100%;
+  }
+}
+
+//Ipad
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+  .main-container {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f4e3e3;
+    height: 100%;
+  }
+}
+
+//Kindle Fire HDX
+@media only screen and (min-width: 800px) and (min-height: 1280px) {
+  .main-container {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f4e3e3;
+    height: 100%;
+  }
+}
+
+//Ipad Pro
+@media only screen and (min-width: 1024px) and (min-height: 1366px) {
+  .main-container {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f4e3e3;
+    height: 100%;
+  }
+}
+
+//Laptop with touch
+@media only screen and (min-width: 1280px) and (min-height: 950px) {
+  .main-container {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f4e3e3;
+    height: 100%;
+  }
+}
+
+//Ipad Pro  #Check
+@media only screen and (min-width: 1366px) and (min-height: 1024px) {
+  .main-container {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f4e3e3;
+    height: 100%;
+  }
+}

@@ -1,0 +1,836 @@
+.radio-item {
+  display: inline-block;
+  position: relative;
+  padding: 0 6px;
+  margin: -6px 0 0;
+}
+.radio-item-female {
+  display: contents;
+}
+
+.radio-item input[type="radio"] {
+  display: none;
+}
+
+.radio-item label {
+  color: #666;
+  font-weight: normal;
+}
+
+.radio-item label:before {
+  content: " ";
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  margin: 0 5px 0 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 11px;
+  border: 2px solid #413e3e;
+  background-color: transparent;
+}
+
+.radio-item input[type="radio"]:checked + label:after {
+  border-radius: 11px;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  content: " ";
+  display: block;
+  background: #818284;
+}
+
+textarea {
+  border-style: none;
+
+  background-color: #f3e3e3;
+  border-color: Transparent;
+  overflow: auto;
+  // width: 100%;
+  width: 97%;
+  border-radius: 5px;
+  border: none;
+
+  outline: none;
+  box-shadow: none;
+  resize: none;
+  padding: 7px;
+
+  height: 100%;
+  min-height: 115px;
+  // margin: 7px 10px;
+  margin: 7px 4px;
+}
+
+.inputtype {
+  border-style: none;
+  background-color: #f3e3e3;
+  border-color: Transparent;
+  overflow: auto;
+  width: 93%;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  resize: none;
+  margin-left: 13px;
+  padding-left: 8px;
+  height: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+}
+
+.inputtype1 {
+  border-style: none;
+  background-color: #f3e3e3;
+  border-color: Transparent;
+  overflow: auto;
+  width: 60%;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  resize: none;
+  margin-left: 8px;
+  padding-left: 8px;
+  height: 30px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+textarea:focus {
+  outline-offset: 0px;
+  border-style: none;
+  border-color: Transparent;
+}
+::placeholder {
+  color: #a09c9c;
+  font-size: 13px;
+}
+//New Css Start
+.main-container {
+  margin: 15px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+  height: auto;
+}
+.main-header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  color: #656464;
+}
+.pet-dropDown {
+  background-color: #f3e3e3;
+  height: 32px;
+  margin-left: 13px;
+  padding: 9px 9px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #a09c9c;
+  border-radius: 5px;
+  width: 92%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+}
+.container {
+  height: auto;
+  background-color: #f4e3e3;
+}
+
+//Responsive CSS Start
+
+//Galixy Note 3 //Galaxy Note 2 // Galaxy S3 //Galaxy S5// Blackberry
+@media only screen and (min-width: 360px) and (min-height: 640px) {
+  .main-container {
+    margin: 15px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+    height: 530px;
+  }
+  .pet-dropDown {
+    background-color: #f3e3e3;
+    height: 46px;
+    margin-left: 13px;
+    padding: 15px 9px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #a09c9c;
+    border-radius: 5px;
+    width: 92%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+  }
+  .inputtype {
+    border-style: none;
+    background-color: #f3e3e3;
+    border-color: Transparent;
+    overflow: auto;
+    width: 93%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+    margin-left: 13px;
+    padding-left: 8px;
+    height: 46px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+  }
+  .textarea {
+    border-style: none;
+    background-color: #f3e3e3;
+    border-color: Transparent;
+    overflow: auto;
+    width: 97%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+    padding: 7px;
+    height: 100%;
+    min-height: 115px;
+    margin: 7px 4px !important;
+  }
+  .inputtype1 {
+    border-style: none;
+    background-color: #f3e3e3;
+    border-color: Transparent;
+    overflow: auto;
+    width: 60%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+    margin-left: 8px;
+    padding-left: 8px;
+    height: 46px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .container {
+    height: 100%;
+    background-color: #f4e3e3;
+  }
+}
+
+//Apple Iphone x
+@media only screen and (min-width: 375px) and (min-height: 812px) {
+  .main-container {
+    margin: 15px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+    height: 86%;
+  }
+  .pet-dropDown {
+    background-color: #f3e3e3;
+    height: 100px;
+    margin-left: 13px;
+    padding: 40px 9px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #a09c9c;
+    border-radius: 5px;
+    width: 92%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+    margin-bottom: 10px;
+  }
+  .inputtype {
+    border-style: none;
+    background-color: #f3e3e3;
+    border-color: Transparent;
+    overflow: auto;
+    width: 93%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+    margin-left: 13px;
+    padding-left: 8px;
+    height: 63px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+  }
+  .textarea {
+    border-style: none;
+    background-color: #f3e3e3;
+    border-color: Transparent;
+    overflow: auto;
+    width: 97%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+    padding: 7px;
+    height: 98%;
+    /* min-height: 102px; */
+    margin: 7px 10px;
+  }
+  .container {
+    height: 100%;
+    background-color: #f4e3e3;
+  }
+}
+
+@media only screen and (min-width: 375) and (min-height: 667px) {
+  .main-container {
+    margin: 15px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+    height: 84%;
+  }
+  // .main-container {
+  //   margin: 15px;
+  //   background-color: #fff;
+  //   border-radius: 12px;
+  //   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+  //   height: 555px;
+  // }
+  .container {
+    height: 100%;
+    background-color: #f4e3e3;
+  }
+}
+
+//Pixel 2
+@media only screen and (min-width: 411px) and (min-height: 731px) {
+  .main-container {
+    margin: 15px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+    height: 620px;
+  }
+  .pet-dropDown {
+    background-color: #f3e3e3;
+    height: 60px;
+    margin-left: 13px;
+    padding: 9px 9px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #a09c9c;
+    border-radius: 5px;
+    width: 92%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+  }
+  .inputtype {
+    border-style: none;
+    background-color: #f3e3e3;
+    border-color: Transparent;
+    overflow: auto;
+    width: 93%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+    margin-left: 13px;
+    padding-left: 8px;
+    height: 60px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+  }
+  .container {
+    height: 100%;
+    background-color: #f4e3e3;
+  }
+}
+
+//Pixel 2 XL
+@media only screen and (min-width: 411px) and (min-height: 823px) {
+  .main-container {
+    margin: 15px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+    height: 710px;
+  }
+  .pet-dropDown {
+    background-color: #f3e3e3;
+    height: 72px;
+    margin-left: 13px;
+    padding: 9px 9px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #a09c9c;
+    border-radius: 5px;
+    width: 92%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+  }
+  .inputtype {
+    border-style: none;
+    background-color: #f3e3e3;
+    border-color: Transparent;
+    overflow: auto;
+    width: 93%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+    margin-left: 13px;
+    padding-left: 8px;
+    height: 72px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+  }
+  .container {
+    height: 100%;
+    background-color: #f4e3e3;
+  }
+}
+
+//Apple Iphone 6/7/8 Plus
+@media only screen and (min-width: 414px) and (min-height: 736px) {
+  .main-container {
+    margin: 15px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+    height: 84%;
+  }
+  .pet-dropDown {
+    background-color: #f3e3e3;
+    height: 100px;
+    margin-left: 13px;
+    padding: 9px 9px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #a09c9c;
+    border-radius: 5px;
+    width: 92%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+    margin-bottom: 10px;
+  }
+  .inputtype {
+    border-style: none;
+    background-color: #f3e3e3;
+    border-color: Transparent;
+    overflow: auto;
+    width: 93%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+    margin-left: 13px;
+    padding-left: 8px;
+    height: 46px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+  }
+  .textarea {
+    border-style: none;
+    background-color: #f3e3e3;
+    border-color: Transparent;
+    overflow: auto;
+    width: 95%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+    padding: 7px;
+    height: 100%;
+    min-height: 115px;
+    margin: 7px 10px;
+  }
+  .container {
+    height: 100%;
+    background-color: #f4e3e3;
+  }
+}
+
+//Nokia N9
+@media only screen and (min-width: 480px) and (min-height: 854px) {
+  .main-container {
+    margin: 15px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+    height: 740px;
+  }
+  .pet-dropDown {
+    background-color: #f3e3e3;
+    height: 75px;
+    margin-left: 13px;
+    padding: 9px 9px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #a09c9c;
+    border-radius: 5px;
+    width: 92%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+  }
+  .inputtype {
+    border-style: none;
+    background-color: #f3e3e3;
+    border-color: Transparent;
+    overflow: auto;
+    width: 93%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+    margin-left: 13px;
+    padding-left: 8px;
+    height: 75px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+  }
+  .container {
+    height: 100%;
+    background-color: #f4e3e3;
+  }
+}
+
+//Nexus 7
+@media only screen and (min-width: 600px) and (min-height: 960px) {
+  .main-container {
+    margin: 15px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+    height: 850px;
+  }
+  .pet-dropDown {
+    background-color: #f3e3e3;
+    height: 92px;
+    margin-left: 13px;
+    padding: 9px 9px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #a09c9c;
+    border-radius: 5px;
+    width: 92%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+  }
+  .inputtype {
+    border-style: none;
+    background-color: #f3e3e3;
+    border-color: Transparent;
+    overflow: auto;
+    width: 93%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+    margin-left: 13px;
+    padding-left: 8px;
+    height: 92px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+  }
+  .inputtype1 {
+    border-style: none;
+    background-color: #f3e3e3;
+    border-color: Transparent;
+    overflow: auto;
+    width: 60%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+    margin-left: 8px;
+    padding-left: 8px;
+    height: 92px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .container {
+    height: 100%;
+    background-color: #f4e3e3;
+  }
+}
+
+//Kindle Fire HDX ,BLackbery Play Book
+@media only screen and (min-width: 600px) and (min-height: 1024px) {
+  .main-container {
+    margin: 15px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+    height: 910px;
+    padding: 0px 0px 0px 8px;
+  }
+  .pet-dropDown {
+    background-color: #f3e3e3;
+    height: 100px;
+    margin-left: 13px;
+    padding: 9px 9px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #a09c9c;
+    border-radius: 5px;
+    width: 92%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+  }
+  .inputtype {
+    border-style: none;
+    background-color: #f3e3e3;
+    border-color: Transparent;
+    overflow: auto;
+    width: 93%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+    margin-left: 13px;
+    padding-left: 8px;
+    height: 100px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+  }
+  .container {
+    height: 100%;
+    background-color: #f4e3e3;
+  }
+}
+
+// //Nokia Lumia 550
+// @media only screen and (min-width: 640px) and (min-height: 360px) {
+//   .height-auto {
+//     height: auto !important;
+//   }
+// }
+
+//Ipad
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+  .main-container {
+    margin: 15px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+    height: 89%;
+  }
+  .pet-dropDown {
+    background-color: #f3e3e3;
+    height: 100px;
+    margin-left: 13px;
+    padding: 9px 9px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #a09c9c;
+    border-radius: 5px;
+    width: 92%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+  }
+  .inputtype {
+    border-style: none;
+    background-color: #f3e3e3;
+    border-color: Transparent;
+    overflow: auto;
+    width: 93%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+    margin-left: 13px;
+    padding-left: 8px;
+    height: 100px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+  }
+  .textarea {
+    border-style: none;
+    background-color: #f3e3e3;
+    border-color: Transparent;
+    overflow: auto;
+    width: 97%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+    padding: 7px;
+    height: 100%;
+    min-height: 115px;
+    margin: 7px 10px;
+  }
+  .container {
+    height: 100%;
+    background-color: #f4e3e3;
+  }
+}
+
+//Kindle Fire HDX
+@media only screen and (min-width: 800px) and (min-height: 1280px) {
+  .pet-dropDown {
+    background-color: #f3e3e3;
+    height: 117px;
+    margin-left: 13px;
+    padding: 9px 9px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #a09c9c;
+    border-radius: 5px;
+    width: 92%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+    margin-bottom: 10px;
+  }
+  .inputtype {
+    border-style: none;
+    background-color: #f3e3e3;
+    border-color: Transparent;
+    overflow: auto;
+    width: 93%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+    margin-left: 13px;
+    padding-left: 8px;
+    height: 117px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+  }
+  .main-container {
+    margin: 15px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+    height: 80%;
+  }
+  .textarea {
+    border-style: none;
+    background-color: #f3e3e3;
+    border-color: Transparent;
+    overflow: auto;
+    width: 97%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+    padding: 7px;
+    height: 141% !important;
+    min-height: 115px;
+    margin: 7px 4px;
+  }
+  .container {
+    height: 100%;
+    background-color: #f4e3e3;
+  }
+}
+
+//Ipad Pro
+@media only screen and (min-width: 1024px) and (min-height: 1366px) {
+  .textarea {
+    border-style: none;
+    background-color: #f3e3e3;
+    border-color: Transparent;
+    overflow: auto;
+    width: 96%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+    padding: 7px;
+    height: 122%;
+    min-height: 374px;
+    margin: 7px 7px;
+  }
+  .pet-age {
+    padding: 0px 35px 0px 0px;
+  }
+  .container {
+    height: 100%;
+    background-color: #f4e3e3;
+  }
+}
+
+//Laptop with touch
+@media only screen and (min-width: 1280px) and (min-height: 950px) {
+  .pet-dropDown {
+    background-color: #f3e3e3;
+    height: 90px;
+    margin-left: 13px;
+    padding: 9px 9px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #a09c9c;
+    border-radius: 5px;
+    width: 92%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+    margin-bottom: 10px;
+  }
+  .inputtype {
+    border-style: none;
+    background-color: #f3e3e3;
+    border-color: Transparent;
+    overflow: auto;
+    width: 93%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+    margin-left: 13px;
+    padding-left: 8px;
+    height: 90px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+  }
+  .textarea {
+    border-style: none;
+    background-color: #f3e3e3;
+    border-color: Transparent;
+    overflow: auto;
+    width: 96%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+    padding: 7px;
+    height: 90%;
+    min-height: 55px !important;
+    margin: 7px 7px;
+  }
+  .main-container {
+    margin: 15px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+    height: 835px;
+    padding: 0px 0px 0px 25px;
+  }
+  .inputtype1 {
+    height: 90px;
+  }
+  .pet-age {
+    padding-right: 60px;
+  }
+  .container {
+    height: 100%;
+    background-color: #f4e3e3;
+  }
+}

@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-toolbar>
+  
+         <ion-title>
+          <i class="fa fa-arrow-left" aria-hidden="true" (click)="backmenu()"></i>
+              <label>{{ticket_id}}</label>    
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="masters1">
+  
+  <ion-grid>
+    <ion-row>
+      <div class="module">
+        <div class="onepart">
+          <div class="under-line ticket-div">
+            <ion-label position="stacked" class="ion-title">status</ion-label>
+            <p [ngStyle]="status == 'pending' && {'color' : 'red'}  || status == 'completed' && {'color' : 'green'} ">{{status}}</p>
+          </div>
+      </div>
+      <div class="onepart">
+          <div class="under-line ticket-div">
+            <ion-label position="stacked" class="ion-title">Topic</ion-label>
+            <p>{{topic_name}}</p>
+          </div>
+      </div>
+      <div class="onepart">
+        <!-- <ion-item lines="none"> -->
+          <div class="under-line ticket-div">
+            <ion-label position="stacked" class="ion-title">Raised Date</ion-label>
+            <p>{{updateObj.Date}},{{updateObj.Time}}</p>
+          </div>
+        <!-- </ion-item> -->
+      </div>
+      <div class="onepart">
+        <!-- <ion-item lines="none"> -->
+          <div class="under-line ticket-div">
+            <ion-label position="stacked" class="ion-title">Expected Resolution Date</ion-label>
+            <p>{{updateObj.expDate}},{{updateObj.expTime}}</p>
+          </div>
+        <!-- </ion-item> -->
+      </div>
+      <div class="onepart">
+        <!-- <ion-item lines="none"> -->
+          <div class="under-line ticket-div">
+            <ion-label position="stacked" class="ion-title">Subject</ion-label>
+            <p>{{updateObj.subject}}</p>
+          </div>
+        <!-- </ion-item> -->
+      </div>
+      <div class="onepart">
+        <!-- <ion-item lines="none"> -->
+          <div class="under-line ticket-div">
+            <ion-label position="stacked" class="ion-title">Description</ion-label>
+                <div *ngFor="let msg of updateObj.description; let i = index">
+                  <label class="user1" *ngIf="msg.userId != updateObj.userId">{{msg.content}}</label>
+                  <label class="user2" *ngIf="msg.userId == updateObj.userId">
+                    <span>{{msg.content}}</span>
+                  </label>
+                  <div>{{msg.name}}<span>{{msg.time}}</span></div><br>
+                </div>
+                <input type="text" *ngIf="status != 'completed'" [(ngModel)]="content">
+                <button *ngIf="status != 'completed'" (click)="sendMessage()">Send</button>
+          </div>
+        <!-- </ion-item> -->
+      </div>
+      <div class="onepart">
+        <!-- <ion-item lines="none"> -->
+          <div class="under-line ticket-div">
+            <ion-label position="stacked" class="ion-title">Priority</ion-label>
+            <p>{{updateObj.priority}}</p>
+          </div>
+        <!-- </ion-item> -->
+      </div>
+      <div class="onepart" *ngIf = "status == 'completed'">
+          <ion-label position="stacked rating-label" class="ion-title">Rating</ion-label>
+          <p >
+            <ion-icon ios="ios-star-outline" md="md-star-outline" id="rate_{{s}}" *ngFor="let s of start_no" (click)="give_rating(s)"></ion-icon>
+          </p>
+      </div>
+
+      <div class="onepart" *ngIf="image_path != 'string'">
+        <!-- <ion-item lines="none"> -->
+          <div class="ticket-div">
+            <ion-label position="stacked" class="ion-title">Attachment</ion-label>
+            <div class="image_div">
+              <img src="{{image_path}}" class="transaction-image" (click)="zooming_image(image_path)">
+            </div>
+          </div>
+        <!-- </ion-item> -->
+      </div>
+      <!-- <div class="onepart">
+        <ion-button expand="block"  (click)="close_ticket()">Close Ticket</ion-button>
+      </div> -->
+    </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer *ngIf = "status != 'completed'">
+  <ion-toolbar  class="pay-bottoms"  >
+    <button   (click)="close_ticket(Addrating)">
+      <ion-label>Close</ion-label>
+    </button>     &nbsp;
+    <button  [routerLink]="['/Support']" >
+      <ion-label>Cancel</ion-label>
+    </button> 
+  </ion-toolbar>
+  </ion-footer>
+  <ng-template #Addrating>  
+    <div class="modal-body">
+      <div class="onepart">
+        <ion-label position="stacked rating-label" class="ion-title">Rating</ion-label>
+        <p >
+          <ion-icon ios="ios-star-outline" md="md-star-outline" id="rate_{{s}}" *ngFor="let s of start_no" (click)="give_rating(s)"></ion-icon>
+        </p>
+    </div>
+    </div>
+     </ng-template>

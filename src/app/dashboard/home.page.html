@@ -1,0 +1,122 @@
+<!-- <ion-header> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- </ion-header> -->
+<ion-content [ngStyle]="{'background': 'url(../assets/bg/background.jpg) no-repeat center center / cover'}">
+
+  <div style="padding-left: 10px;padding-right: 10px;">
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" size-md>
+
+          <div class="user_prof" [routerLink]="['/EditOwnerProfile']">
+            <i class="fa fa-user user_prof_fa"></i>
+          </div>
+
+        </ion-col>
+
+        <ion-col size="6" size-md>
+          <i class="fa fa-align-right align_opt"></i>
+        </ion-col>
+
+      </ion-row>
+
+
+    </ion-grid>
+
+  </div>
+
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3" size-md style="margin-left: -10px;">
+
+        <div class="toggle_sidebar_menu" id="mySidebar">
+
+          <div class="main-nav">
+            <ul class="nav">
+              <li><a href="#">Adoption</a></li>
+              <li><a href="#">Sale/Buy</a></li>
+              <li><a href="#">Mating</a></li>
+              <li><a href="#">Products/Accessiors</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="sidebar_btn" id="opSidebar" onclick="toggle_sidebar()">
+
+          <i class="fa fa-caret-right" style="font-size:28px;margin-top: 20px;"></i>
+
+        </div>
+
+      </ion-col>
+
+      <ion-col size="9" size-md class="pet_box">
+        <div class="pet_box_one" *ngFor="let pet of ownerLists">
+          <div class="pet_imgbox">
+            <img alt="UploadImage" *ngIf="pet.profilewarning"
+             src="https://matingapp.s3.ap-south-1.amazonaws.com/avatar.jpg">
+            <img [src]="pet.images[0].filepath" *ngIf="!pet.profilewarning" class="pet_imgbox_img">
+          </div>
+          <div class="pet_infobox" (click)="editDetail(pet, 'petreg')">
+            <ion-row>
+              <ion-col size="6" size-sm>
+                <span class="pet_infobox_text">{{pet.pet_name}}</span>
+              </ion-col>
+              <ion-col size="6" size-sm>
+                <span class="pet_infobox_text"><i class="fa fa-mars" style="font-size:28px;color: #FF6B81;"></i>
+                  {{pet.pet_gender}}</span>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="6" size-sm>
+                <span class="pet_infobox_text" style="font-weight: bold;">{{pet.pet_breed}}</span>
+              </ion-col>
+              <ion-col size="6" size-sm>
+                <span class="pet_infobox_text">8 months</span>
+              </ion-col>
+            </ion-row>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+  <ion-grid style="height: 50px;width: 100%;background-color: #F7AFB8;position: fixed;bottom: 0px;">
+    <ion-row>
+      <ion-col size="4" size-sm class="btm_menu">
+        <i class="fa fa-home btm_menu_active" style="font-size:28px;"></i>
+      </ion-col>
+      <ion-col size="4" size-sm class="btm_menu">
+        <i class="fa fa-plus-circle" [routerLink]="['/showPetRegistration']"  style="font-size:28px;"></i>
+      </ion-col>
+      <ion-col size="4" size-sm class="btm_menu">
+        <i class="fa fa-bell" style="font-size:28px;" ></i>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<script>
+  function toggle_sidebar() {
+
+    /*if ($(this).is(':hidden')) {*/
+    if ($("#mySidebar").is(':visible')) {
+      document.getElementById("opSidebar").style.marginLeft = "0%";
+      document.getElementById("mySidebar").style.display = "none";
+      //alert("visible");
+    }
+    else {
+      document.getElementById("opSidebar").style.marginLeft = "40px";
+      document.getElementById("mySidebar").style.display = "block";
+      //alert("hidden");  
+    }
+
+
+  }
+
+</script>

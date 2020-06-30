@@ -1,0 +1,62 @@
+<ion-content class="authcontent" [ngStyle]="{'background': 'url(../assets/icon/back-bg.gif) no-repeat 0 0 / cover'}">
+  <form [formGroup]="otpForm" (ngSubmit)="otpPage(otpForm.value, otpForm.valid)">
+  <!-- <img src="assets/images/logo.png" class="logo"> -->
+
+  <div class="extra ion-text-center">
+
+    <b> mobile verification</b>
+    <p>Please enter the OTP received via SMS below for mobile number verification</p>
+  </div>
+
+  <ion-list>
+    <ion-item>
+      <ion-input type="number"
+      placeholder="-" name="a" #a
+      formControlName="num1"
+      (keyup)="moveFocus($event, b, '')"
+       type="tel" maxlength="1" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" placeholder="-"  name="b"
+      #b
+      formControlName="num2"
+      (keyup)="moveFocus($event, c, a)"
+      type="tel"
+      maxlength="1"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" placeholder="-"  name="c"
+      #c
+      formControlName="num3"
+      (keyup)="moveFocus($event, d, b)"
+      type="tel"
+      maxlength="1"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" placeholder="-" name="d"
+      #d
+      formControlName="num4"
+      (keyup)="moveFocus($event, '', c)"
+      type="tel"
+      maxlength="1"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <div class="centerbtn">
+    <ion-button class="logingbtn" size="larg" type="submit" > NEXT
+    </ion-button>
+</div>
+
+
+  <p class="dont"> Don't get the code? <ion-button class="resendbtn" fill='clear' (click)="Resend()" [disabled]="hidevalue"> Resend</ion-button></p>
+
+  </form>
+</ion-content>
+
+
+
+<!-- <ion-footer *ngIf="timeLeft>0">
+  <p class="count"> <span class="fill icon-alarm-clock"></span> {{timeLeft}} Seconds</p>
+
+</ion-footer> -->

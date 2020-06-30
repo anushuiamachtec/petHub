@@ -1,0 +1,180 @@
+<!-- <ion-header> -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<!-- </ion-header> -->
+<!-- <ion-content [ngStyle]="{'background': 'url(../assets/bg/2.jpg) no-repeat center center / cover'}"> -->
+<ion-content style="background-color: #f4e3e3;">
+  <div class="main-container">
+    <!-- <i class="fa fa-chevron-left" style="color:#2F3542;font-size:28px;-webkit-text-stroke: 1.5px #F4E3E3;"></i> -->
+    <img
+      src="../assets/bg/Icon feather-chevron-left.svg"
+      [routerLink]="['/auth']"
+    />
+
+    <img
+      style="
+        transform: rotate(45deg);
+        width: 45px;
+        position: fixed;
+        margin-left: 279px;
+        margin-top: -35px;
+      "
+      src="../assets/bg/pawprint-1.svg"
+    />
+
+    <ion-grid>
+      <form [formGroup]="loginForm">
+        <div *ngIf="Confirm">
+          <div *ngFor="let sim of cards">
+            <label (click)="confirmSim(sim)">{{sim.phoneNumber}}</label>
+          </div>
+        </div>
+        <ion-row style="margin-top: 45px;" *ngIf="!Confirm">
+          <ion-col size="12" size-md>
+            <label style="color: #707070; font-size: 14px; font-style: normal;"
+              ><b>Password fdfdfdf</b></label
+            >
+          </ion-col>
+
+          <img
+            style="
+              transform: rotate(45deg);
+              width: 45px;
+              position: fixed;
+              margin-left: 156px;
+              margin-top: -30px;
+            "
+            src="../assets/bg/pawprint-1.svg"
+          />
+        </ion-row>
+
+        <ion-row style="margin-left: 15px; margin-top: 10px;">
+          <ion-col size="3" size-lg>
+            <ion-input
+              placeholder=""
+              name="a"
+              #a
+              formControlName="num1"
+              (keyup)="moveFocus($event, b, '')"
+              type="text"
+              maxlength="1"
+              class="form-control telclass"
+            ></ion-input>
+          </ion-col>
+          <ion-col size="3" size-lg>
+            <ion-input
+              placeholder=""
+              name="b"
+              #b
+              formControlName="num2"
+              (keyup)="moveFocus($event, c, a)"
+              type="text"
+              maxlength="1"
+              class="form-control telclass"
+            ></ion-input>
+          </ion-col>
+          <ion-col size="3" size-lg>
+            <ion-input
+              type=""
+              name="c"
+              #c
+              formControlName="num3"
+              (keyup)="moveFocus($event, d, b)"
+              type="text"
+              maxlength="1"
+              class="form-control telclass"
+            ></ion-input>
+          </ion-col>
+          <ion-col size="3" size-lg>
+            <ion-input
+              type=""
+              name="d"
+              #d
+              formControlName="num4"
+              (keyup)="moveFocus($event, '', c)"
+              type="text"
+              maxlength="1"
+              class="form-control telclass"
+            ></ion-input>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-top: 18px; margin-right: 10px;">
+          <ion-col size="12" size-lg>
+            <label
+              style="
+                color: #707070;
+                font-size: 12.7px;
+                float: right;
+                margin-right: 10px;
+              "
+              [routerLink]="['/forget-password']"
+              ><b>Forget Password </b></label
+            >
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <img
+            style="
+              transform: rotate(45deg);
+              width: 45px;
+              position: fixed;
+              margin-left: 130px;
+              margin-top: -4px;
+            "
+            src="../assets/bg/pawprint-1.svg"
+          />
+
+          <img
+            style="
+              transform: rotate(45deg);
+              width: 45px;
+              position: fixed;
+              margin-left: -20px;
+              margin-top: -4px;
+            "
+            src="../assets/bg/pawprint-1.svg"
+          />
+        </ion-row>
+        <ion-content padding style="height: 150px;">
+          <ion-row class="captcha">
+            <re-captcha
+              (resolved)="captchaResolved($event)"
+              siteKey="6LeDyqYZAAAAAK0jzIiNaGm-br5d1miTx1vBzYFq"
+            >
+            </re-captcha>
+          </ion-row>
+
+          <!-- <button [disabled]="!captchaPassed" ion-button (click)="sendForm()">Submit</button> -->
+        </ion-content>
+
+        <ion-row class="submit-button">
+          <ion-col size="12" size-lg style="text-align: center;">
+            <!-- <button type="button" class="btn btn-primary" [ngStyle]="{'background': 'url(../assets/bg/4.jpg) no-repeat center center / cover'}" ><span style="margin-top: 20px;color: #2F3542;font-size: 16px;font-family: 'Segoe UI';font-style: bold;"><b>Submit</b></span></button> -->
+            <a><img src="../assets/bg/Group 433.svg" /></a>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-top: 75px;">
+          <ion-col size="12" size-lg style="text-align: center;">
+            <label
+              style="color: #707070; font-size: 16px;"
+              [routerLink]="['/login']"
+              ><span
+                style="
+                  text-decoration: underline;
+                  text-underline-position: under;
+                "
+                ><b>Different user</b></span
+              >
+              ?</label
+            >
+          </ion-col>
+        </ion-row>
+      </form>
+    </ion-grid>
+  </div>
+</ion-content>

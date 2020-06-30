@@ -1,0 +1,243 @@
+<!-- <ion-header> -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<!-- </ion-header> -->
+<!-- <ion-content [ngStyle]="{'background': 'url(../assets/bg/5.jpg) no-repeat center center / cover'}"> -->
+<ion-content
+  style="background-color: #f4e3e3; background-image: url(../assets/bg/pk.png);"
+>
+  <div class="main-container">
+    <img src="../../assets/pk.png" class="first-foot" />
+    <img src="../../assets/pk.png" class="second-foot" />
+    <!-- <i class="fa fa-chevron-left" style="color:#2F3542;font-size:28px;-webkit-text-stroke: 1.5px #F3E4E2;"></i> -->
+    <img
+      src="../assets/bg/Icon feather-chevron-left.svg"
+      [routerLink]="['/auth']"
+    />
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-md>
+          <label
+            style="
+              color: #2f3542;
+              font-size: 18px;
+              font-family: 'Segoe UI';
+              font-style: normal;
+            "
+            ><b>Sign up</b></label
+          >
+        </ion-col>
+      </ion-row>
+      <form [formGroup]="signupForm">
+        <ion-row class="name-main-container">
+          <ion-col size="12" size-md>
+            <input
+              type=""
+              name=""
+              formControlName="name"
+              class="form-control input-field-width"
+              placeholder="Name"
+            />
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: 15px;">
+          <ion-col size="9" size-md>
+            <input
+              type="text"
+              name=""
+              formControlName="email"
+              class="form-control email"
+              (change)="EmailOtp(signupForm.controls['email'].value)"
+              placeholder="Email"
+              [readonly]="signupForm.controls['name'].value == ''"
+            />
+          </ion-col>
+          <ion-col size="3" size-md>
+            <input
+              type="number"
+              name=""
+              formControlName="otp2"
+              class="form-control opt"
+              placeholder="OTP"
+              (change)="checkEmailOtp($event.target)"
+              [readonly]="signupForm.controls['email'].value == ''"
+            />
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-top: -5px;">
+          <ion-col size="12" size-md style="text-align: right;">
+            <label
+              style="
+                color: #2f3542;
+                font-size: 14px;
+                font-family: 'Segoe UI';
+                font-style: normal;
+                margin-right: 10px;
+                text-decoration: underline;
+                text-underline-position: under;
+              "
+              ><u (click)="EmailOtp(signupForm.controls['email'].value)"
+                >Resend OTP</u
+              ></label
+            >
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="2" size-md>
+            <ion-select  class="form-control phone-code"  formControlName="countryCode">
+              <ion-select-option *ngFor="let list of countryList">{{list.code}}</ion-select-option>
+            </ion-select>
+          </ion-col>
+          <ion-col size="7" size-md>
+            <input
+              type="tel"
+              name=""
+              class="form-control phone-no"
+              placeholder="Phone no"
+              maxlength="10" [readonly]="signupForm.controls['otp2'].value == ''"
+              formControlName="mobile_number"
+              (change)="sendOtp()"
+            />
+          </ion-col>
+          <ion-col size="3" size-md>
+            <input
+              name=""
+              class="form-control opt-second"
+              placeholder="OTP"
+              formControlName="otp"
+              [readonly]="signupForm.controls['mobile_number'].value == ''"
+              type="tel"
+              (change)="matchOtp()"
+              maxlength="4"
+            />
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12" size-md style="text-align: right;">
+            <label
+              style="
+                color: #2f3542;
+                font-size: 14px;
+                font-family: 'Segoe UI';
+                font-style: normal;
+                margin-right: 10px;
+                text-decoration: underline;
+                text-underline-position: under;
+              "
+              ><u (click)="sendOtp()">Resend OTP</u></label
+            >
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <div
+            class="times cust-opt-container"
+            *ngIf="enable_Timer"
+            style="border-bottom: none !important; background: transparent;"
+          >
+            <span class="expired-class cust-otp" [style.display]="none"
+              >Your Otp will expire in
+            </span>
+            <div class="countdown">
+              <div class="timer" [style.display]="none">180</div>
+              <svg>
+                <circle r="15" cx="20" cy="20"></circle>
+              </svg>
+            </div>
+            <ion-button
+              color="tertiary"
+              type="button"
+              (click)="sendOtp()"
+              class="timer2"
+              >Resend</ion-button
+            >
+          </div>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12" size-md>
+            <input
+              name=""
+              [readonly]="enable_pass"
+              class="form-control input-field-width telclass"
+              placeholder="Password"
+              formControlName="password"
+              type="tel"
+              maxlength="4"
+              [readonly]="signupForm.controls['otp'].value == ''"
+            />
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: 3px;">
+          <ion-col size="12" size-md>
+            <input
+              name=""
+              class="form-control input-field-width telclass"
+              formControlName="confirm_password"
+              [readonly]="enable_pass"
+              type="tel"
+              maxlength="4"
+              placeholder="Confirm password"
+              [readonly]="signupForm.controls['password'].value == ''"
+            />
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-top: 5px;">
+          <ion-col size="12" size-md>
+            <label
+              style="
+                color: #2f3542;
+                font-size: 11px;
+                font-family: 'Segoe UI';
+                font-style: normal;
+              "
+              ><b
+                >Create your own security question for security purpose.</b
+              ></label
+            >
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-top: -6px;">
+          <ion-col size="12" size-md>
+            <input
+              type=""
+              name=""
+              class="form-control input-field-width"
+              formControlName="secretquestion"
+              placeholder="Security Question?"
+              [readonly]="signupForm.controls['confirm_password'].value == ''"
+            />
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12" size-md>
+            <input
+              type=""
+              name=""
+              class="form-control input-field-width"
+              placeholder="Answer"
+              formControlName="secretanswer"
+              [readonly]="signupForm.controls['secretquestion'].value == ''"
+            />
+          </ion-col>
+        </ion-row>
+        <ion-row class="forward-icon">
+          <ion-col size="12" size-md style="text-align: center;">
+            <!-- <button type="button" class="btn btn-primary" ><i class="fa fa-chevron-right" style="font-size:26px;-webkit-text-stroke: 1.5px #FA9AA7;"></i></button> -->
+            <a
+              ><img
+                src="../assets/bg/Group 264.svg"
+                (click)="signupForm.controls['secretquestion'].value != '' && register()"
+            /></a>
+          </ion-col>
+        </ion-row>
+      </form>
+    </ion-grid>
+  </div>
+</ion-content>

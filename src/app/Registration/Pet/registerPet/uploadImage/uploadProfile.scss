@@ -1,0 +1,62 @@
+
+.main-container {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  /*background-color: #f4e3e3;*/
+}
+
+
+.btm_menu{
+  text-align: center;
+}
+.btm_menu_active{
+ color: white!important; 
+}
+
+
+.botm-button{
+  height: 50px;
+  width: 100%;
+  background-color: #F7AFB8;
+  position: fixed;bottom: 0px;
+}
+
+.pet-box{
+  height: 480px;
+  width: 100%;
+
+  border-radius: 20px;
+  background-color:#FFFFFF;
+}
+
+.file-btn{
+   /* border: 2px solid red; */
+    height: 68px;
+    width: 68px;
+    margin-top: -8px;
+
+     }
+
+
+
+input[type="file"] {
+    display: none;
+}
+
+.upld-text {
+  margin-top: 10px;
+  margin-left: -10px;
+  font-family: 'Segoe UI';
+  font-style: normal;
+}
+.img-box{
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+   border-radius: 10px;
+   display: block;
+   margin-right: auto;
+   margin-left: auto;
+   box-shadow: 0px 5px 8px 2px #E5E8E8;
+}

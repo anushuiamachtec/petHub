@@ -1,0 +1,264 @@
+ion-header h4 span img {
+  max-width: 22px;
+  margin-bottom: 4px;
+}
+ion-header {
+  background: #e97b80;
+  /*color:#fff;*/
+}
+.head-info {
+  width: 100%;
+  display: table;
+}
+.documents {
+  display: table-cell;
+}
+.documents img {
+  max-width: 17px;
+}
+.head-info {
+  line-height: 30px;
+  margin: 0 auto;
+  padding: 10px 15px;
+  border-bottom: 1px solid #444;
+  border-top: 1px solid #444;
+  margin-top: 18px;
+}
+.basic-table-info table tr {
+  line-height: 40px;
+}
+.nav-tabs {
+    /*border-bottom: 1px solid #ddd;*/
+    display: inline-flex;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #fff;
+    cursor: default;
+    background-color: #e97b80;
+    border: 1px solid #e97b80;
+    border-bottom-color: transparent;
+}
+.one-part-otp {
+    display: table-cell;
+}
+h4.header-title {
+    color: #fff;
+    font-size: 18px;
+    font-family: lato;
+    /* margin-left: 11px; */
+    background: #191717;
+    /* width: 46%; */
+    padding: 10px;
+    border-radius: 10px;
+}
+.nav-tabs>li>a {
+       /* margin-right: 2px; */
+    /* line-height: 1.42857143; */
+    /* border: 1px solid transparent; */
+    /* border-radius: 4px 4px 0 0; */
+    background: #3a3a3a;
+    color: #e6797f;
+    font-family: lato;
+    padding: 6px;
+    border-radius: 3px;
+    width: 116px;
+    /* display: inline-block; */
+    margin-right: 4px;
+    display: inline-blo !important;
+    font-size: 13px;
+}
+ion-list {
+    padding: 0px !important;
+    background: transparent;
+}
+ion-item.item-label {
+        display: inline-block;
+    padding: 0px !important;
+    --background: transparent;
+    color: #fff;
+    margin-left: -20px;
+  }
+  ion-radio {
+      margin: 6px;
+    --color: #d95784 !important;
+}
+ion-radio.md.in-item.interactive.hydrated.radio-checked {
+    --color-checked: #d95784 !important;
+    --background: #d95784 !important;
+}
+ion-radio {
+    --color: #d95784 !important;
+    --background: #d95784 !important;
+}
+
+.basic-table-info table {
+  width: 100%;
+  margin: 0 23px;
+}
+.basic-table-info table tr td {
+  font-size: 14px;
+}
+.one-part-edit {
+  padding: 9px 13px;
+}
+.one-part-edit input {
+  width: 100%; 
+  
+    padding: 11px 2px;
+       width: 100%;
+    border-bottom: 2px solid #f2debaad;
+    outline: none;
+    font-family: lato;
+    background-color: #3c3f311f;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color: #f5f5f5;
+}
+.one-part-edit label {
+     display: block;
+    margin-bottom: 7px;
+    color: #e97b80;
+    font-family: lato;
+    font-weight: bold;
+    font-size: 14px;
+}
+.documents{
+  display: table-cell;
+  font-size: 16px;
+}
+
+ion-footer button {
+     text-align: center;
+    margin: 8px auto;
+    width: 100px;
+    padding: 12px;
+    border-radius: 26px;
+    background: transparent;
+    font-size: 18px;
+    font-family: lato;
+}
+ion-footer {
+    text-align: center;
+    height: 56px;
+    vertical-align: middle;
+    margin-top: 2px;
+    background: #e97b80;
+}
+ion-content {
+    --background: #060606;
+}
+.one-part-edit button {
+       margin-top: -26px;
+    background: #3a3a3a;
+    color: #e6797f;
+    font-family: lato;
+    padding: 8px;
+    border-radius: 3px;
+    width: 151px;
+    display: inline-block;
+    margin-right: 15px;
+
+}
+.edit-section button {
+    background: #e97b80;
+    color: #fff;
+    padding: 9px;
+    font-size: 15px;
+    border-radius: 25px;
+    margin-right: 6px;
+}
+button.editss {
+    float: right;
+}
+.panel-body {
+    background: #000;
+}
+.panel-heading {
+    background: #3a3a3a !important;
+    color: #e97b80 !important;
+    border-color: none !important;
+    padding: 18px 11px;
+}
+.card ion-label {
+    color: #31201c;
+    font-weight: bold;
+}
+ ion-select {
+width: 95%;
+    margin: 5px 1px;
+    padding: 9px 4px !important;
+    background: #3a3a3a;
+    border: 1px solid #e4e4e4;
+    color: #fff;
+    font-size: 15px;
+    font-family: lato;
+}
+.card{
+    margin-top: 19px;
+}
+.panel-group {
+    margin-bottom: 20px;
+    margin-top: 21px;
+}
+h4.modal-title {
+    margin-top: -23px;
+    text-align: center;
+}
+i.fa.fa-angle-down {
+    position: absolute;
+    right: 18px;
+    border: 1px solid #d06c6c;
+    border-radius: 13px;
+    padding: 1px;
+    font-size: 20px;
+    width: 24px;
+    text-align: center;
+}
+.modal-header .close {
+      margin-top: 3px;
+}
+h4.modal-title {
+    margin-top: -23px;
+    text-align: center;
+}
+.close {
+       float: right;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1;
+    color: #141418;
+    opacity: 1;
+    margin-right: 8px;
+}
+.modal-content {
+       position: absolute;
+    top: 184px;
+    font-family: Lato;
+    margin: 23px;
+    background: linear-gradient(123deg, rgba(144, 108, 73, 0.98) 0%, #ecc26f 0%, #ebac6f 0%, #e97b80 67%);
+    width: 345px;
+    margin: 0 auto;
+
+}
+table.edit-hospital {
+      width: 308px;
+    margin: 0 auto;
+    font-size: 14px;
+}
+.one-part-edit tr th {
+    font-size: 14px;
+    color: #e97b80;
+    padding: 8px;
+}
+table.edit-hospital tr td {
+    color: #fff;
+    padding: 10px;
+}
+table.edit-hospital tr td ion-checkbox {
+    position: absolute;
+    left: 17px;
+}
+table.edit-hospital tr {
+    border-bottom: 1px solid #ccc;
+}

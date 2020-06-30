@@ -1,0 +1,96 @@
+<ion-content style="background-color: #F4E3E3;">
+  <div class="main-container">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" size-md>
+          <div class="user_prof">
+            <!-- <i class="fa fa-user user_prof_fa" ></i>  -->
+            <img src="../assets/bg/Group 257.svg">
+            <img style="transform: rotate(45deg); width: 45px;position: fixed;margin-left: 102px;margin-top: -5px; "
+              src="../assets/bg/pawprint-1.svg">
+          </div>
+        </ion-col>
+        <ion-col size="6" size-md style="margin-top: 10px;">
+          <img style="transform: rotate(45deg); width: 45px;position: fixed;margin-left: 105px;margin-top: 25px; "
+            src="../assets/bg/pawprint-1.svg">
+          <!-- <i class="fa fa-align-right align_opt" ></i> -->
+          <img src="../assets/bg/Group 258.svg" style="float: right;">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-md>
+          <div class="pet-box">
+            <ion-grid>
+              <ion-row style="margin-top: 10px;">
+                <ion-col size="3" size-lg>
+                  <label class="file-btn"  (click)="selectImage('image', 'petreg')"
+                    style="background-image: url('../assets/bg/Group 505.svg');background-size: cover;">
+                    <input type="file" name="">
+                  </label>
+                </ion-col>
+                <ion-col size="9" size-lg>
+                  <div class="upld-text">
+                    <p>Upload Photos of your pet</p>
+                  </div>
+                </ion-col>
+              </ion-row>
+              <ion-row style="padding-left: 5px;padding-right: 0px;margin-top: -10px;" *ngFor="let x of imageArray">
+                <ion-col size="3" size-lg>
+                  <div class="img-box">
+                    <img [src]="x.filepath">
+                  </div>
+                </ion-col>
+                <ion-col size="3" size-lg>
+                  <div class="img-box"></div>
+                </ion-col>
+                <ion-col size="3" size-lg>
+                  <div class="img-box"></div>
+                </ion-col>
+                <ion-col size="3" size-lg>
+                  <div class="img-box"></div>
+                </ion-col>
+              </ion-row>
+              <ion-row style="padding-left: 5px;padding-right: 0px;margin-top: 5px;">
+                <ion-col size="3" size-lg>
+                  <div class="img-box"></div>
+                </ion-col>
+                <ion-col size="3" size-lg>
+                  <div class="img-box"></div>
+                </ion-col>
+                <ion-col size="3" size-lg>
+                  <div class="img-box"></div>
+                </ion-col>
+                <ion-col size="3" size-lg>
+                  <div class="img-box"></div>
+                </ion-col>
+              </ion-row>
+              <ion-row style="margin-top: 80px;margin-right: 4px;">
+                <ion-col size="12" size-lg style="text-align: center;">
+                  <a (click)="submit()"><img src="../assets/bg/Group 437.svg"></a>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <ion-grid class="botm-button">
+    <ion-row>
+      <ion-col size="4" size-sm class="btm_menu">
+        <!-- <i class="fa fa-home btm_menu_active" style="font-size:28px;"></i> -->
+        <img src="../assets/bg/house.svg">
+      </ion-col>
+      <ion-col size="4" size-sm class="btm_menu">
+        <!-- <i class="fa fa-plus-circle" style="font-size:28px;"></i> -->
+        <img src="../assets/bg/plus.svg">
+      </ion-col>
+      <ion-col size="4" size-sm class="btm_menu">
+        <!-- <i class="fa fa-bell" style="font-size:28px;" ></i> -->
+        <img src="../assets/bg/notification.svg">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

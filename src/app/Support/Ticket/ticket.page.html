@@ -1,0 +1,124 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <div class="pr-20-px pl-20-px"> -->
+      <!-- <ion-icon src="../../assets/theme-icon/back.svg" ></ion-icon>
+      <ion-title class="text-center uppercase color-white title">Ticket</ion-title> -->
+      <ion-title>
+        <i class="fa fa-arrow-left" aria-hidden="true" (click)="backmenu()"></i>
+        <!-- <img class="backData" [routerLink]="['/Dashboard']" (click)="backData()" src="../../assets/icon/backbutton.png">     -->
+            <label>Ticket</label>    
+        <button class="add-ticket"  size="small"  (click)="add_ticket()">New Ticket &nbsp;<i class="fa fa-plus"></i>
+        </button>   
+    </ion-title>
+     
+    <!-- </div> -->
+  </ion-toolbar>
+</ion-header>
+<ion-content class="masters1">
+  <div class="search-hero left" id="main">
+    <!-- <label>Search By OrderId</label> -->
+    <ion-searchbar debounce="500" type="text" placeholder="Search TicketId" name="search" id="searchId"
+      [(ngModel)]="searchText" autocomplete="off" showCancelButton="focus"></ion-searchbar>
+    <!-- </ion-toolbar> -->
+    <button class="filter" (click)="filterNav()"><i class="fa fa-filter"></i>filter</button>
+    <div id="mySidebar" class="sidebar">
+      <div class="filterrtest">
+        <h4>Apply Filters</h4>
+      </div>
+      <div class="transactionn-title" >
+        <div class="dateFilter">
+          <label>From Date</label>&nbsp;    
+          <button class="calendar-open">
+          <i class="fa fa-calendar" (click)="datePicker.open()"></i>
+        </button>
+          <ion-datetime  #datePicker  displayFormat="DD/MM/YYYY" [(ngModel)]="searchFilter.searchdate"   ></ion-datetime>
+          
+        </div>
+        <div class="dateFilter">
+          <label>To Date</label>&nbsp;   
+          <button [disabled]="!searchFilter.searchdate" class="calendar-open">
+          <i class="fa fa-calendar"  (click)="datePicker1.open()"></i>
+        </button >
+          <ion-datetime #datePicker1  displayFormat="DD/MM/YYYY" [(ngModel)]="searchFilter.searchdate2" [min]="searchFilter.searchdate"   ></ion-datetime>
+     </div>
+      </div>
+      <!-- <div class="search-hero">
+        <label>From Date</label>
+        <input class="form-control" placeholder="selectdate" [(ngModel)]="searchFilter.searchdate"
+          (ngModelChange)="filterDate(searchFilter.searchdate)" value="09-01-2020" type='date'>
+
+      </div>
+      <div class="search-hero">
+        <label>To Date</label>
+        <input class="form-control" placeholder="selectdate" [min]="searchFilter.searchdate"
+          [(ngModel)]="searchFilter.searchdate2" (ngModelChange)="filterDate(searchFilter)"
+          [disabled]="searchFilter.searchdate ==''" value="09-01-2020" type='date'>
+
+      </div> -->
+      <div class="search-hero">
+        <label>Search By OrderStatus </label>
+        <select class="form-control" placeholder="selectstatus" name="plan" id="plan"
+          [(ngModel)]="searchFilter.orderStatus">
+          <option value="none" selected disabled hidden>
+            Select Status
+          </option>
+          <option value="completed">completed</option>
+          <option value="pending">pending</option>
+          <option value="canceled">canceled</option>
+        </select>
+      </div>
+
+      <ion-footer>
+        <div class="submit-btn">
+          <button [disabled]="!searchFilter.searchdate && !searchFilter.orderStatus "
+            (click)="filterApply(searchFilter)">Apply</button>
+          <button (click)="closeNav()">Cancel</button>
+        </div>
+      </ion-footer>
+    </div>
+  </div>
+  <!-- <ion-grid> -->
+    <div class="ticket-class"  >
+      <div class="p-20-px pt-10-px pb-10-px under-line" *ngFor="let ticket of tickets" >
+        <!-- <h4>{{ticket.date}}</h4> -->
+        <h4 class="daysHis"> {{ticket.day}}</h4>
+        <div class="OneTicket" *ngFor="let tk of ticket.dayOrder;">
+          <div class="history-inside">
+            <div class="history1">
+              <label>
+                Ticket Id : <span>{{tk.ticketId}}</span><br>
+                Created Date : <span>{{tk.Date}}</span><br>
+                Expirey Date : <span>{{tk.ExpDate}}</span>
+                </label>
+            </div>
+         
+            <div class="history1">
+              <div class="historyview ">
+                <a class="click-view" (click)="viewTicket(tk.ticketId)">View </a>
+              </div>
+            </div>
+          </div>
+          <!-- <h3 class="mt-0-px transaction-title" (click)="viewTicket(tk.ticketId)">{{tk.ticketId}}</h3> -->
+          <!-- <span (click)="update_ticket(tk.ticketId)">
+           
+          </span> -->
+           <!-- <span>           
+            <ion-button (click)="update_ticket(tk.ticketId)" color="primary" size="small" class="initiated-button" *ngIf="tk.status == 'closed'">Completed
+            </ion-button>
+            <ion-button (click)="update_ticket(tk.ticketId)" color="secondary" size="small" class="initiated-button" *ngIf="tk.status == 'pending'">Pending
+            </ion-button>
+          </span> -->
+          
+          <!-- <p class="mt-0-px mb-0-px transaction-date">{{tk.Date}}&nbsp;,{{tk.Time}}</p> -->
+        </div>
+        <!-- <div class="OneTicket" >
+         
+        </div> -->
+      <!-- </ion-row> -->
+    </div>
+    </div>
+    <ion-row class="p-20-px pt-10-px pb-10-px under-line" *ngIf="!tickets.length">
+      <p>No Data Found</p>
+    </ion-row>
+  <!-- </ion-grid> -->
+</ion-content>

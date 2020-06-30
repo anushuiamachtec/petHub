@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+  
+    <ion-title>
+     <i class="fa fa-arrow-left" aria-hidden="true" (click)="backmenu()"></i>
+         <label>Create Ticket</label>    
+ </ion-title>
+</ion-toolbar>
+</ion-header>
+<ion-content class="masters1">
+  <ion-grid class="master-grid">
+    <ion-row>
+      <div class="module">
+      <div class="onepart" >
+        <!-- <ion-item lines="none"> -->
+          <div class="under-line ticket-div">
+              <ion-label position="stacked" class="ion-title">Topic</ion-label>
+              <ion-select (ionChange)="SelectTopic(topicName)" [(ngModel)]="topicName" value="payment"  okText="Okay" cancelText="Dismiss" placeholder="Select Topic">
+                <ion-select-option *ngFor="let topicData of topic_detail"  [value]="topicData.id">{{topicData.topicname}}</ion-select-option>
+              </ion-select>
+          </div>
+        <!-- </ion-item>  -->
+      </div>
+      <div class="onepart" >
+        <!-- <ion-item lines="none"> -->
+          <div class="under-line ticket-div">
+            <ion-label position="stacked" class="ion-title">Subject</ion-label>
+            <ion-input type="text" [(ngModel)]="subject" onCopy="return false" onPaste="return false"></ion-input>
+          </div>
+        <!-- </ion-item> -->
+      </div>
+      <div class="onepart" >
+        <!-- <ion-item lines="none"> -->
+          <div class="under-line ticket-div">
+            <ion-label position="stacked" class="ion-title">Priority</ion-label>
+            <ion-select value="payment" [(ngModel)]="priority" okText="Okay" cancelText="Dismiss" placeholder="Select Topic">
+              <ion-select-option value="low">Low</ion-select-option>
+              <ion-select-option value="moderate">Moderate</ion-select-option>
+              <ion-select-option value="high">High</ion-select-option>
+            </ion-select>
+          </div>
+        <!-- </ion-item> -->
+      </div>
+      <div class="onepart" >
+        <!-- <ion-item lines="none"> -->
+          <div class="under-line ticket-div">
+            <ion-label position="stacked" class="ion-title">Description</ion-label>
+            <ion-textarea type="textarea" [(ngModel)]="description" onCopy="return false" onPaste="return false"></ion-textarea>
+          </div>
+        <!-- </ion-item> -->
+      </div>
+     
+      <div class="onepart" >
+        <!-- <ion-item lines="none"> -->
+          <div class="under-line ticket-div">
+            <ion-label position="stacked" class="ion-title">File Attachment</ion-label>
+            <ion-button class="file-choose" size="small" (click)="selectImage()">File</ion-button>
+            <img [src]="urls.filepath" *ngFor="let urls of fileName">
+            <!-- <ion-chip class="file-chip" *ngFor="let urls of fileName">
+              <ion-label>{{urls.filename}}</ion-label>
+              <ion-icon name="close-circle"></ion-icon>
+            </ion-chip> -->
+          </div>
+        <!-- </ion-item> -->
+      </div>
+      
+      <!-- <div class="onepart1" >
+        <ion-button (click)="form_validation()">Submit</ion-button>
+        <ion-button [routerLink]="['/Support']" >Cancel </ion-button>
+      </div> -->
+    </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+<ion-toolbar  class="pay-bottoms"  >
+  <button  (click)="form_validation()">
+    <ion-label>Submit</ion-label>
+  </button>     &nbsp;
+  <button  [routerLink]="['/Support']" >
+    <ion-label>Cancel</ion-label>
+  </button> 
+</ion-toolbar>
+</ion-footer>

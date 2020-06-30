@@ -1,0 +1,19 @@
+<!-- <ion-header>
+  <ion-toolbar>
+   
+  </ion-toolbar>
+</ion-header> -->
+<ion-content [ngStyle]="{'background': 'url(../assets/icon/back-bg.gif) no-repeat 0 0 / cover'}">
+  <!--   <button (click)="dismiss()">
+       <ion-icon class="fii icon-close" color="dark-yellow"></ion-icon>
+     </button> -->
+     <ion-title>Enter Location</ion-title>
+     <ion-icon name="md-close" (click)="pagePop()"></ion-icon>
+     <ion-searchbar placeholder="Search" [(ngModel)]="autocomplete.query" [showCancelButton]="true"
+       (ionInput)="updateSearch()" (ionCancel)="dismiss()"></ion-searchbar>
+   <ion-list>
+     <ion-item class="searchpadding" #map id="map" *ngFor="let item of autocompleteItems" tappable (click)="chooseItem(item)">
+       {{ item }}
+     </ion-item>
+   </ion-list>
+ </ion-content>

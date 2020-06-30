@@ -1,0 +1,811 @@
+.form-control {
+    display: block;
+    /*width: 280px;*/
+    height: 40px;
+    padding: 3px 14px;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #8b8888;
+    background-color: #fff;
+    background-image: none;
+    /*border: 1px solid white;*/
+    border: white;
+    border-radius: 5px;
+    width: 315px;
+  }
+  
+  .form-control2 {
+    display: block;
+    /*width: 280px;*/
+    width: 100%;
+    padding: 3px 18px;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #8b8888;
+    background-color: #fff;
+    background-image: none;
+    /*border: 1px solid white;*/
+    border: white;
+    border-radius: 5px;
+  }
+  
+  .btn-block {
+    display: block;
+    width: 100%;
+  }
+  
+  .btn-primary {
+    color: #fff;
+    background-color: #fa9aa7;
+    /*border-color: #2e6da4;*/
+  }
+  .btn {
+    border: none;
+    border-radius: 12px;
+    display: inline-block;
+    padding: 6px 18px;
+    /*margin-bottom: 0;*/
+    /*font-size: 10px;
+    font-weight: 200;
+    line-height: 1.42857143;*/
+    /*text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;*/
+    cursor: pointer;
+  }
+  /*.fa { transform: scale(1.5,1); }*/
+  
+  //Imported CSS
+  .forward-icon {
+    margin-top: 22px;
+  }
+  .main-container {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f4e3e3;
+    //height: 100%;
+    height: auto !important;
+  }
+  .first-foot {
+    position: fixed;
+    right: 95px;
+    top: 23px;
+  }
+  .second-foot {
+    position: fixed;
+    right: -12px;
+    top: 0px;
+  }
+  .select-area {
+    // width: 315px;
+    width: 100%;
+  }
+  .street-width {
+    // width: 205px;
+    width: 100%;
+  }
+  .city {
+    // margin-left: 5px;
+    // width: 145px;
+    width: 100%;
+  }
+  .zip-code {
+    // margin-left: 20px;
+    width: 130px;
+  }
+  .door_no {
+    width: 100%;
+  }
+  .landmark {
+    width: 100%;
+  }
+  .state {
+    width: 85%;
+  }
+  .country {
+    width: 100%;
+  }
+  .zip-code {
+    width: 100%;
+  }
+  
+  //Responsive Start
+  //Nokia Lumia 520
+  @media only screen and (min-width: 320px) and (min-height: 533px) {
+    .main-container {
+      height: 100% !important;
+    }
+  }
+  
+  //Apple 5/SE
+  @media only screen and (min-width: 320px) and (min-height: 568px) {
+    .form-control {
+      display: block;
+      height: 35px;
+      padding: 3px 14px;
+      font-size: 16px;
+      line-height: 1.42857143;
+      color: #8b8888;
+      background-color: #fff;
+      background-image: none;
+      border: white;
+      border-radius: 5px;
+    }
+    .main-container {
+      height: 100% !important;
+    }
+    .map-height {
+      height: 90px;
+    }
+    .forward-icon {
+      margin-top: 17px;
+    }
+  }
+  
+  //Galixy Note 3 //Galaxy Note 2 // Galaxy S3 //Galaxy S5// Blackberry
+  @media only screen and (min-width: 360px) and (min-height: 640px) {
+    .form-control {
+      display: block;
+      height: 35px;
+      padding: 3px 14px;
+      font-size: 16px;
+      line-height: 1.42857143;
+      color: #8b8888;
+      background-color: #fff;
+      background-image: none;
+      border: white;
+      border-radius: 5px;
+    }
+    .forward-icon {
+      margin-top: 20px;
+    }
+    .main-container {
+      height: 100% !important;
+    }
+    .map-height {
+      height: 150px;
+    }
+  }
+  
+  //Apple 6/7/8
+  @media only screen and (min-width: 375px) and (min-height: 667px) {
+    .form-control {
+      display: block;
+      height: 35px;
+      padding: 3px 14px;
+      font-size: 16px;
+      line-height: 1.42857143;
+      color: #8b8888;
+      background-color: #fff;
+      background-image: none;
+      border: white;
+      border-radius: 5px;
+    }
+    .main-container {
+      height: 100% !important;
+    }
+    .forward-icon {
+      margin-top: 20px;
+    }
+    .map-height {
+      height: 180px;
+    }
+  }
+  
+  //Apple Iphone X
+  @media only screen and (min-width: 375px) and (min-height: 812px) {
+    .form-control {
+      display: block;
+      height: 55px;
+      padding: 3px 14px;
+      font-size: 16px;
+      line-height: 1.42857143;
+      color: #8b8888;
+      background-color: #fff;
+      background-image: none;
+      border: white;
+      border-radius: 5px;
+    }
+    .main-container {
+      height: 100% !important;
+    }
+    .forward-icon {
+      margin-top: 40px;
+    }
+  }
+  
+  //LG Optimus -Nexus 4
+  @media only screen and (min-width: 384px) and (min-height: 640px) {
+    .main-container {
+      height: 100% !important;
+    }
+    .map-height {
+      height: 150px;
+    }
+    .forward-icon {
+      margin-top: 15px;
+    }
+  }
+  
+  //Pixel 2
+  @media only screen and (min-width: 411px) and (min-height: 731px) {
+    .form-control {
+      display: block;
+      height: 50px;
+      padding: 3px 14px;
+      font-size: 16px;
+      line-height: 1.42857143;
+      color: #8b8888;
+      background-color: #fff;
+      background-image: none;
+      border: white;
+      border-radius: 5px;
+    }
+    .forward-icon {
+      margin-top: 10px;
+    }
+    .main-container {
+      height: 100% !important;
+    }
+  }
+  
+  //Pixel 2 XL
+  @media only screen and (min-width: 411px) and (min-height: 823px) {
+    .form-control {
+      display: block;
+      height: 65px;
+      padding: 3px 14px;
+      font-size: 16px;
+      line-height: 1.42857143;
+      color: #8b8888;
+      background-color: #fff;
+      background-image: none;
+      border: white;
+      border-radius: 5px;
+    }
+    .forward-icon {
+      margin-top: 15px;
+    }
+    .main-container {
+      height: 100% !important;
+    }
+  }
+  
+  //Nexus 5X - Nexus 6P
+  @media only screen and (min-width: 412px) and (min-height: 732px) {
+    .form-control {
+      display: block;
+      height: 45px;
+      padding: 3px 14px;
+      font-size: 16px;
+      line-height: 1.42857143;
+      color: #8b8888;
+      background-color: #fff;
+      background-image: none;
+      border: white;
+      border-radius: 5px;
+    }
+    .forward-icon {
+      margin-top: 20px;
+    }
+    .main-container {
+      height: 100% !important;
+    }
+  }
+  
+  //Apple Iphone 6/7/8 Plus
+  @media only screen and (min-width: 414px) and (min-height: 736px) {
+    .form-control {
+      display: block;
+      height: 50px;
+      padding: 3px 14px;
+      font-size: 16px;
+      line-height: 1.42857143;
+      color: #8b8888;
+      background-color: #fff;
+      background-image: none;
+      border: white;
+      border-radius: 5px;
+    }
+    .main-container {
+      height: 100% !important;
+    }
+    .map-height {
+      height: 180px;
+    }
+  }
+  
+  //Nokia N9
+  @media only screen and (min-width: 480px) and (min-height: 854px) {
+    .form-control {
+      display: block;
+      height: 65px;
+      padding: 3px 14px;
+      font-size: 16px;
+      line-height: 1.42857143;
+      color: #8b8888;
+      background-color: #fff;
+      background-image: none;
+      border: white;
+      border-radius: 5px;
+    }
+    .main-container {
+      height: 100% !important;
+    }
+    .forward-icon {
+      margin-top: 30px;
+    }
+  }
+  
+  //Nexus 7
+  @media only screen and (min-width: 600px) and (min-height: 960px) {
+    .form-control {
+      display: block;
+      height: 85px;
+      padding: 3px 14px;
+      font-size: 16px;
+      line-height: 1.42857143;
+      color: #8b8888;
+      background-color: #fff;
+      background-image: none;
+      border: white;
+      border-radius: 5px;
+    }
+    .forward-icon {
+      margin-top: 30px;
+    }
+    .main-container {
+      height: 100% !important;
+    }
+  }
+  
+  //Kindle Fire HDX ,BLackbery Play Book
+  @media only screen and (min-width: 600px) and (min-height: 1024px) {
+    .form-control {
+      display: block;
+      height: 100px;
+      padding: 3px 14px;
+      font-size: 16px;
+      line-height: 1.42857143;
+      color: #8b8888;
+      background-color: #fff;
+      background-image: none;
+      border: white;
+      border-radius: 5px;
+    }
+    .forward-icon {
+      margin-top: 30px;
+    }
+    .state {
+      width: 100%;
+    }
+    .main-container {
+      height: 100% !important;
+    }
+  }
+  
+  //Ipad
+  @media only screen and (min-width: 768px) and (min-height: 1024px) {
+    .main-container {
+      height: 100% !important;
+    }
+    .forward-icon {
+      margin-top: 45px;
+    }
+  }
+  
+  //Kindle Fire HDX
+  @media only screen and (min-width: 800px) and (min-height: 1280px) {
+    .form-control {
+      display: block;
+      height: 150px;
+      padding: 3px 14px;
+      font-size: 16px;
+      line-height: 1.42857143;
+      color: #8b8888;
+      background-color: #fff;
+      background-image: none;
+      border: white;
+      border-radius: 5px;
+    }
+    .forward-icon {
+      margin-top: 35px;
+    }
+    .main-container {
+      height: 100% !important;
+    }
+  }
+  
+  //Ipad Pro
+  @media only screen and (min-width: 1024px) and (min-height: 1366px) {
+    .form-control {
+      display: block;
+      height: 150px;
+      padding: 3px 14px;
+      font-size: 16px;
+      line-height: 1.42857143;
+      color: #8b8888;
+      background-color: #fff;
+      background-image: none;
+      border: white;
+      border-radius: 5px;
+    }
+    .main-container {
+      height: 100% !important;
+    }
+    .forward-icon {
+      margin-top: 85px;
+    }
+  }
+  
+  //Laptop with touch
+  @media only screen and (min-width: 1280px) and (min-height: 950px) {
+    .form-control {
+      display: block;
+      height: 85px;
+      padding: 3px 14px;
+      font-size: 16px;
+      line-height: 1.42857143;
+      color: #8b8888;
+      background-color: #fff;
+      background-image: none;
+      border: white;
+      border-radius: 5px;
+    }
+    .forward-icon {
+      margin-top: 30px;
+    }
+    .main-container {
+      height: 100% !important;
+    }
+  }
+  
+  //Ipad Pro  #Check
+  @media only screen and (min-width: 1366px) and (min-height: 1024px) {
+    .main-container {
+      height: 100% !important;
+    }
+  }
+  div#mapbooking {
+    // position: inherit !important;
+    height: 205px;
+    border-radius: -8px;
+}
+ion-row.forminput.map {
+    position: relative;
+}
+  //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  
+  // //Responsive Start
+  // //Nokia Lumia 520
+  // @media only screen and (min-width: 320px) and (min-height: 533px) {
+  //   .map-height {
+  //     height: 100px;
+  //   }
+  //   .form-control {
+  //     display: block;
+  //     /*width: 280px;*/
+  //     height: 30px;
+  //     padding: 3px 14px;
+  //     font-size: 16px;
+  //     line-height: 1.42857143;
+  //     color: #8b8888;
+  //     background-color: #fff;
+  //     background-image: none;
+  //     /*border: 1px solid white;*/
+  //     border: white;
+  //     border-radius: 5px;
+  //     width: 340px;
+  //   }
+  //   .select-area {
+  //     width: 280px;
+  //   }
+  //   .street-width {
+  //     width: 180px;
+  //   }
+  //   .city {
+  //     margin-left: 25px;
+  //     width: 105px;
+  //   }
+  //   .zip-code {
+  //     margin-left: 35px;
+  //     width: 100px;
+  //   }
+  //   .forward-icon {
+  //     margin-top: 3px;
+  //   }
+  // }
+  
+  // //Apple 5/SE
+  // @media only screen and (min-width: 320px) and (min-height: 568px) {
+  //   .map-height {
+  //     height: 100px;
+  //   }
+  //   .form-control {
+  //     display: block;
+  //     /*width: 280px;*/
+  //     height: 35px;
+  //     padding: 3px 14px;
+  //     font-size: 16px;
+  //     line-height: 1.42857143;
+  //     color: #8b8888;
+  //     background-color: #fff;
+  //     background-image: none;
+  //     /*border: 1px solid white;*/
+  //     border: white;
+  //     border-radius: 5px;
+  //     width: 340px;
+  //   }
+  //   .select-area {
+  //     // width: 280px;
+  //     width: 100%;
+  //   }
+  //   .street-width {
+  //     width: 185px;
+  //   }
+  //   .city {
+  //     margin-left: 24px;
+  //     width: 115px;
+  //   }
+  //   .zip-code {
+  //     margin-left: 35px;
+  //     width: 105px;
+  //   }
+  //   .forward-icon {
+  //     margin-top: 10px;
+  //   }
+  // }
+  
+  //Galaxy S5// Blackberry
+  // @media only screen and (min-width: 360px) and (min-height: 640px) {
+  //   // .form-control2 {
+  //   //   display: block;
+  //   //   /*width: 280px;*/
+  //   //   width: 100%;
+  //   //   padding: 3px 18px;
+  //   //   font-size: 16px;
+  //   //   line-height: 1.42857143;
+  //   //   color: #8b8888;
+  //   //   background-color: #fff;
+  //   //   background-image: none;
+  //   //   /*border: 1px solid white;*/
+  //   //   border: white;
+  //   //   border-radius: 12px;
+  //   //   // width: 315px;
+  //   //   height: 134px;
+  //   //   margin-top: 10px;
+  //   // }
+  //   // .forward-icon {
+  //   //   margin-top: 10px;
+  //   // }
+  //   .select-area {
+  //     width: 320px;
+  //   }
+  //   .street-width {
+  //     width: 210px;
+  //   }
+  //   .city {
+  //     margin-left: 5px;
+  //     width: 150px;
+  //   }
+  //   .zip-code {
+  //     margin-left: 20px;
+  //     width: 135px;
+  //   }
+  //   .form-control {
+  //     display: block;
+  //     /*width: 280px;*/
+  //     height: 45px;
+  //     padding: 3px 14px;
+  //     font-size: 16px;
+  //     line-height: 1.42857143;
+  //     color: #8b8888;
+  //     background-color: #fff;
+  //     background-image: none;
+  //     /*border: 1px solid white;*/
+  //     border: white;
+  //     border-radius: 5px;
+  //   }
+  // }
+  
+  // //Apple 6/7/8
+  // @media only screen and (min-width: 375px) and (min-height: 667px) {
+  //   .select-area {
+  //     width: 335px;
+  //   }
+  //   .street-width {
+  //     width: 220px;
+  //   }
+  //   .city {
+  //     // margin-left: 5px;
+  //     // width: 160px;
+  //     margin-left: 5px;
+  //     width: 155px;
+  //   }
+  //   .zip-code {
+  //     // margin-left: 20px;
+  //     // width: 145px;
+  //     margin-left: 20px;
+  //     width: 140px;
+  //   }
+  //   .forward-icon {
+  //     margin-top: 40px;
+  //   }
+  // }
+  
+  // //LG Optimus -Nexus 4
+  // @media only screen and (min-width: 384px) and (min-height: 640px) {
+  //   // .form-control {
+  //   //   display: block;
+  //   //   /*width: 280px;*/
+  //   //   height: 40px;
+  //   //   padding: 3px 14px;
+  //   //   font-size: 16px;
+  //   //   line-height: 1.42857143;
+  //   //   color: #8b8888;
+  //   //   background-color: #fff;
+  //   //   background-image: none;
+  //   //   /*border: 1px solid white;*/
+  //   //   border: white;
+  //   //   border-radius: 5px;
+  //   //   width: 340px;
+  //   // }
+  //   .select-area {
+  //     width: 345px;
+  //   }
+  //   .street-width {
+  //     width: 225px;
+  //   }
+  //   .city {
+  //     margin-left: 5px;
+  //     width: 165px;
+  //   }
+  //   .zip-code {
+  //     margin-left: 20px;
+  //     width: 146px;
+  //   }
+  //   .forward-icon {
+  //     margin-top: 20px;
+  //   }
+  // }
+  
+  // //Apple Iphone X
+  // @media only screen and (min-width: 375px) and (min-height: 812px) {
+  //   .select-area {
+  //     width: 330px;
+  //   }
+  //   .street-width {
+  //     width: 220px;
+  //   }
+  //   .city {
+  //     margin-left: 5px;
+  //     width: 155px;
+  //   }
+  //   .form-control {
+  //     display: block;
+  //     /*width: 280px;*/
+  //     height: 70px;
+  //     padding: 3px 14px;
+  //     font-size: 16px;
+  //     line-height: 1.42857143;
+  //     color: #8b8888;
+  //     background-color: #fff;
+  //     background-image: none;
+  //     /*border: 1px solid white;*/
+  //     border: white;
+  //     border-radius: 5px;
+  //   }
+  //   .forward-icon {
+  //     margin-top: 25px;
+  //   }
+  // }
+  // //Pixel 2
+  // @media only screen and (min-width: 411px) and (min-height: 731px) {
+  //   .select-area {
+  //     width: 370px;
+  //   }
+  //   .street-width {
+  //     width: 245px;
+  //   }
+  //   .city {
+  //     margin-left: 5px;
+  //     width: 175px;
+  //   }
+  //   .zip-code {
+  //     margin-left: 20px;
+  //     width: 160px;
+  //   }
+  //   .form-control {
+  //     display: block;
+  //     /*width: 280px;*/
+  //     height: 50px;
+  //     padding: 3px 14px;
+  //     font-size: 16px;
+  //     line-height: 1.42857143;
+  //     color: #8b8888;
+  //     background-color: #fff;
+  //     background-image: none;
+  //     /*border: 1px solid white;*/
+  //     border: white;
+  //     border-radius: 5px;
+  //   }
+  //   .forward-icon {
+  //     margin-top: 30px;
+  //   }
+  // }
+  
+  // //Pixel 2 XL
+  // @media only screen and (min-width: 411px) and (min-height: 823px) {
+  //   .select-area {
+  //     width: 370px;
+  //   }
+  //   .street-width {
+  //     width: 245px;
+  //   }
+  //   .city {
+  //     margin-left: 5px;
+  //     width: 175px;
+  //   }
+  //   .zip-code {
+  //     margin-left: 20px;
+  //     width: 160px;
+  //   }
+  // }
+  
+  // //Nexus 5X - Nexus 6P
+  // @media only screen and (min-width: 412px) and (min-height: 732px) {
+  //   .form-control {
+  //     display: block;
+  //     /*width: 280px;*/
+  //     height: 65px;
+  //     padding: 3px 14px;
+  //     font-size: 16px;
+  //     line-height: 1.42857143;
+  //     color: #8b8888;
+  //     background-color: #fff;
+  //     background-image: none;
+  //     /*border: 1px solid white;*/
+  //     border: white;
+  //     border-radius: 5px;
+  //   }
+  //   .forward-icon {
+  //     margin-top: 15px;
+  //   }
+  // }
+  
+  // //Apple Iphone 6/7/8 Plus
+  // @media only screen and (min-width: 414px) and (min-height: 736px) {
+  //   .select-area {
+  //     width: 370px;
+  //   }
+  //   .street-width {
+  //     width: 245px;
+  //   }
+  //   .city {
+  //     margin-left: 5px;
+  //     width: 175px;
+  //   }
+  //   .zip-code {
+  //     margin-left: 20px;
+  //     width: 160px;
+  //   }
+  //   .form-control {
+  //     display: block;
+  //     /*width: 280px;*/
+  //     height: 60px;
+  //     padding: 3px 14px;
+  //     font-size: 16px;
+  //     line-height: 1.42857143;
+  //     color: #8b8888;
+  //     background-color: #fff;
+  //     background-image: none;
+  //     /*border: 1px solid white;*/
+  //     border: white;
+  //     border-radius: 5px;
+  //   }
+  // }
+  // //Nexus 5X
+  // @media only screen and (min-width: 412px) and (min-height: 732px) {
+  // }
+  

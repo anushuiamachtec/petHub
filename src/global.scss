@@ -1,0 +1,145 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+.bottomtoast{
+    --background: #ff6a8c !important;
+}
+ion-content {
+  --background: rgba(255,255,255,0);
+}
+.menu-content-open {
+    cursor: pointer;
+    touch-action: manipulation;
+    pointer-events: auto;
+    width: 100%;
+}
+.my-custom-menu {
+    --width: 238px;
+}
+
+body.modal-open {
+    background-color: rgba(0,0,0,0.5);
+}
+ion-header{
+    background: #ec164487;
+}
+button.locate1.left-fav.btn-primary.text-right {
+    border: 1px solid #e4e4e4;
+    padding: 4px;
+    margin-right: 3px;
+    border-radius: 10px;
+}
+io-header{
+  --background : #ff426a2e !important;
+}
+ion-tab-button {
+    font-family: Lato;
+    font-size: 12px;
+}
+.ionspinner{
+    height: 40px !important;
+    width: 40px !important;
+    display: block !important;
+    margin: auto !important;
+    position: absolute !important;
+    left: 45% !important;
+    top: 45% !important;
+    color: #fff !important;
+  }
+  ion-searchbar.ng-valid.sc-ion-searchbar-md-h {
+    --padding: 0px !important;
+    width: 96% !important;
+    padding-top: 0px !important;
+}
+.searchbar-search-icon.sc-ion-searchbar-md {
+        left: 1px;
+    top: 11px;
+    width: 22px;
+    height: 21px;
+}
+input.searchbar-input.sc-ion-searchbar-md {
+    padding-left: 39px;
+    background: transparent;
+    border-bottom: 1px solid #ccc;
+    box-shadow: none;
+}
+  .noRecordFound{
+    background: transparent!important;
+    --background: transparent!important;
+    ion-item{
+      background: transparent!important;
+    --background: transparent!important;
+    color:white;
+    text-align: center;
+    }
+  }
+
+  .infinite-loading{
+    ion-spinner{
+      color:white;
+    }
+    .infinite-loading-text{
+      color:#fff;
+    }
+
+  }
+
+
+ion-slide.filter {
+    width: 100px !important;
+    background: green;
+    color: #fff;
+}
+.modal-backdrop {
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0 !important;
+    background-color: #000;
+}
+.onepart.design1 ion-select{
+    display: -webkit-inline-box;
+    display: inline-flex;
+    float: right;
+    padding: 6px;
+    border-bottom: 1px solid #e2dedf !important;
+    width: 200px;
+    outline: navajowhite;
+    border: none;
+    background: #dcc2c773;
+}
+.onepart.design1 ion-searchbar#breedId {
+    display: -webkit-inline-box;
+    display: inline-flex;
+    float: right;
+    padding: 0px 8px;
+    width: 200px !important;
+    outline: navajowhite;
+    border: none;
+    background: #dcc2c773;
+}

@@ -1,0 +1,294 @@
+<!-- <ion-header> -->
+
+<!-- </ion-header> -->
+<!-- <ion-content [ngStyle]="{'background': 'url(../assets/bg/1.png) no-repeat center center / cover'}"> -->
+<!-- <ion-content style="background-color: #F4E3E3;background-image: url('../assets/bg/1.png');"> -->
+<ion-content style="background-color: #F4E3E3;">
+  <div
+    style="height: 235px;width: 100%;background-image: url('../assets/bg/pet_dog.png');background-size: 100% 100%;background-repeat: no-repeat;">
+    <div style="padding-top:20px;  margin-left: 15px;">
+      <img src="../assets/bg/Icon feather-chevron-left.svg">
+    </div>
+  </div>
+  <div class="main-container">
+    <ion-grid style="margin-top: -18px;">
+      <ion-row>
+        <ion-col size="12" size-lg>
+          <div class="label1">{{petData.pet_name}} - {{petData.petId}}</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid style="margin-top: -10px;">
+      <ion-row>
+        <ion-col size="6" size-lg>
+          <button class="btn1">Medical Records</button>
+        </ion-col>
+        <ion-col size="6" size-lg>
+          <button class="btn1">Appointment</button>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-top: 5px;">
+        <ion-col size="12" size-lg>
+          <label class="label2">My name is <span style="font-size: 22px;">{{petData.pet_name}}</span></label>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-left: 2px;margin-top: 4px;">
+        <ion-col style="padding: 0px!important;">
+          <div class="img-box">
+            <div style="text-align: center;"> <label>Breed</label> </div>
+            <div style="text-align: center;"> <label>{{petData.pet_breed}}</label> </div>
+          </div>
+        </ion-col>
+        <ion-col style="padding: 0px!important;">
+          <div class="img-box">
+            <div style="text-align: center;"> <label>Age</label> </div>
+            <div style="text-align: center;"> <label>{{petData.ageyears}}{{petData.agemonth}} months</label> </div>
+          </div>
+        </ion-col>
+        <ion-col style="padding: 0px!important;">
+          <div class="img-box">
+            <div style="text-align: center;"> <label>Sex</label> </div>
+            <div style="text-align: center;"> <label><i class="fa fa-mars" style="font-size:12px;color: #FF6B81;"></i>
+                {{petData.pet_gender}}</label> </div>
+          </div>
+        </ion-col>
+        <ion-col style="padding: 0px!important;">
+          <div class="img-box">
+            <div style="text-align: center;"> <label>Vaccination</label> </div>
+            <div style="text-align: center;"> <label>{{petData.petvaccination}}</label> </div>
+          </div>
+        </ion-col>
+        <ion-col style="padding: 0px!important;">
+          <div class="img-box">
+            <div style="text-align: center;"> <label>Deworming</label> </div>
+            <div style="text-align: center;"> <label>{{petData.petdeworming}}</label> </div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-top: 10px;">
+        <ion-col size="12" size-lg>
+          <label style="font-family: 'Segoe UI';font-style: normal;font-size: 14px;">Description :</label>
+          <br>
+          <textarea class="form-control2">{{petData.pet_description}}</textarea>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12" size-lg>
+          <label style="font-family: 'Segoe UI';font-style: normal;font-size: 14px;">Photos :</label>
+        </ion-col>
+      </ion-row>
+      <ion-row style="padding-right:15px ;padding-left:15px; ">
+        <ion-col size="3" size-lg>
+          <div class="sm-img-box"></div>
+        </ion-col>
+        <ion-col size="3" size-lg>
+          <div class="sm-img-box"></div>
+        </ion-col>
+        <ion-col size="3" size-lg>
+          <div class="sm-img-box"></div>
+        </ion-col>
+        <ion-col size="3" size-lg>
+          <div class="sm-img-box"></div>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-top: -5px;">
+        <ion-col size="12" size-lg>
+          <label style="font-family: 'Segoe UI';font-style: normal;font-size: 14px;">Certificates :</label>
+        </ion-col>
+      </ion-row>
+      <ion-row style="padding-right:15px ;padding-left:10px; ">
+        <ion-col size="4" size-lg style="padding: 0px!important;margin-left: 15px;">
+          <div class="md-img-box"></div>
+          <div style="text-align: center;font-family: 'Segoe UI';font-style: normal;font-size: 14px;">
+            <label>Birth</label></div>
+        </ion-col>
+        <ion-col size="4" size-lg style="padding: 0px!important;margin-left: 15px;">
+          <div class="md-img-box"></div>
+          <div style="text-align: center;font-family: 'Segoe UI';font-style: normal;font-size: 14px;">
+            <label>Kennel</label></div>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-top: -5px;">
+        <ion-col size="12" size-lg>
+          <label style="font-family: 'Segoe UI';font-style: normal;font-size: 14px;">Achievements :</label>
+        </ion-col>
+      </ion-row>
+      <ion-row style="padding-left: 10px;padding-right: 5px; ">
+        <ion-col size="4" size-lg>
+          <div class="smd-img-box"></div>
+        </ion-col>
+        <ion-col size="4" size-lg>
+          <div class="smd-img-box"></div>
+        </ion-col>
+        <ion-col size="4" size-lg>
+          <div class="smd-img-box"></div>
+        </ion-col>
+      </ion-row>
+      <ion-row style="padding-left: 10px;padding-right: 5px; ">
+        <ion-col size="12" size-lg>
+          <div class="lg-img-box"></div>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-top: 10px;">
+        <ion-col size="12" size-lg>
+          <label style="font-family: 'Segoe UI';font-style: normal;font-size: 14px;">Sire : Name </label>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-left: 2px;margin-top: -5px;">
+        <ion-col size="3" size-lg style="padding: 0px!important;">
+          <div class="img-box">
+            <div style="text-align: center;"> <label>Breed</label> </div>
+            <div style="text-align: center;"> <label>Pug</label> </div>
+          </div>
+        </ion-col>
+        <ion-col size="3" size-lg style="padding: 0px!important;">
+          <div class="img-box">
+            <div style="text-align: center;"> <label>Age</label> </div>
+            <div style="text-align: center;"> <label>4Yr 3Mn</label> </div>
+          </div>
+        </ion-col>
+        <ion-col size="3" size-lg style="padding: 0px!important;margin-left: -10px;margin-top: -5px;">
+          <div class="sm-md-img-box">
+            <div style="text-align: center;margin-top: 10px;"> <label>Birth certificate</label> </div>
+          </div>
+        </ion-col>
+        <ion-col size="3" size-lg style="padding: 0px!important;margin-top: -5px;">
+          <div class="sm-md-img-box">
+            <div style="text-align: center;margin-top: 10px;"> <label>Kennel certificate</label> </div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-top: 10px;">
+        <ion-col size="12" size-lg>
+          <label style="font-family: 'Segoe UI';font-style: normal;font-size: 14px;">Description :</label>
+          <br>
+          <textarea class="form-control2"></textarea>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12" size-lg>
+          <label style="font-family: 'Segoe UI';font-style: normal;font-size: 14px;">Photos/videos :</label>
+        </ion-col>
+      </ion-row>
+      <ion-row style="padding-right:15px ;padding-left:15px; ">
+        <ion-col size="3" size-lg>
+          <div class="sm-img-box"></div>
+        </ion-col>
+        <ion-col size="3" size-lg>
+          <div class="sm-img-box"></div>
+        </ion-col>
+        <ion-col size="3" size-lg>
+          <div class="sm-img-box"></div>
+        </ion-col>
+        <ion-col size="3" size-lg>
+          <div class="sm-img-box"></div>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-top: -5px;">
+        <ion-col size="12" size-lg>
+          <label style="font-family: 'Segoe UI';font-style: normal;font-size: 14px;">Achievements :</label>
+        </ion-col>
+      </ion-row>
+      <ion-row style="padding-left: 10px;padding-right: 5px; ">
+        <ion-col size="4" size-lg>
+          <div class="smd-img-box"></div>
+        </ion-col>
+        <ion-col size="4" size-lg>
+          <div class="smd-img-box"></div>
+        </ion-col>
+        <ion-col size="4" size-lg>
+          <div class="smd-img-box"></div>
+        </ion-col>
+      </ion-row>
+      <ion-row style="padding-left: 10px;padding-right: 5px; ">
+        <ion-col size="12" size-lg>
+          <div class="slg-img-box"></div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-top: 10px;">
+        <ion-col size="12" size-lg>
+          <label style="font-family: 'Segoe UI';font-style: normal;font-size: 14px;">Dame : Name </label>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin-left: 2px;margin-top: -5px;">
+        <ion-col size="3" size-lg style="padding: 0px!important;">
+          <div class="img-box">
+            <div style="text-align: center;"> <label>Breed</label> </div>
+            <div style="text-align: center;"> <label>Pug</label> </div>
+          </div>
+        </ion-col>
+        <ion-col size="3" size-lg style="padding: 0px!important;">
+          <div class="img-box">
+            <div style="text-align: center;"> <label>Age</label> </div>
+            <div style="text-align: center;"> <label>3Yr 8Mn</label> </div>
+          </div>
+        </ion-col>
+        <ion-col size="3" size-lg style="padding: 0px!important;margin-left: -10px;margin-top: -5px;">
+          <div class="sm-md-img-box">
+            <div style="text-align: center;margin-top: 10px;"> <label>Birth certificate</label> </div>
+          </div>
+        </ion-col>
+        <ion-col size="3" size-lg style="padding: 0px!important;margin-top: -5px;">
+          <div class="sm-md-img-box">
+            <div style="text-align: center;margin-top: 10px;"> <label>Kennel certificate</label> </div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-top: 10px;">
+        <ion-col size="12" size-lg>
+          <label style="font-family: 'Segoe UI';font-style: normal;font-size: 14px;">Description :</label>
+          <br>
+          <textarea class="form-control2"></textarea>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col size="12" size-lg>
+          <label style="font-family: 'Segoe UI';font-style: normal;font-size: 14px;">Photos/videos :</label>
+        </ion-col>
+      </ion-row>
+      <ion-row style="padding-right:15px ;padding-left:15px; ">
+        <ion-col size="3" size-lg>
+          <div class="sm-img-box"></div>
+        </ion-col>
+        <ion-col size="3" size-lg>
+          <div class="sm-img-box"></div>
+        </ion-col>
+        <ion-col size="3" size-lg>
+          <div class="sm-img-box"></div>
+        </ion-col>
+        <ion-col size="3" size-lg>
+          <div class="sm-img-box"></div>
+        </ion-col>
+
+      </ion-row>
+
+      <ion-row style="margin-top: -5px;">
+        <ion-col size="12" size-lg>
+          <label style="font-family: 'Segoe UI';font-style: normal;font-size: 14px;">Achievements :</label>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="padding-left: 10px;padding-right: 5px; ">
+        <ion-col size="4" size-lg>
+          <div class="smd-img-box"></div>
+        </ion-col>
+        <ion-col size="4" size-lg>
+          <div class="smd-img-box"></div>
+        </ion-col>
+
+        <ion-col size="4" size-lg>
+          <div class="smd-img-box"></div>
+        </ion-col>
+      </ion-row>
+      <ion-row style="padding-left: 10px;padding-right: 5px; ">
+        <ion-col size="12" size-lg>
+          <div class="slg-img-box"></div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

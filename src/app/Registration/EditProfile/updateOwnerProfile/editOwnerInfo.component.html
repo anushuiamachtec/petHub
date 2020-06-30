@@ -1,0 +1,238 @@
+<ion-header>
+  <h4> <span [routerLink]="['/home']"><img src="../../../assets/icon/left-arrow.png"></span>
+    Edit Profile</h4>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i></button>&nbsp;
+          <button type="button" class="close" (click)="updateProfile()" data-dismiss="modal"><i class="fa fa-floppy-o"></i></button>
+          <h4 class="modal-title"> Hospital Information </h4>
+        </div>
+        <div class="modal-body">
+          <div class="card">
+            <ion-label>City Name</ion-label>
+            <ion-searchbar style="width: 75%;color:#fff" [(ngModel)]="hospitalObj.city"
+            (keyup)="searchCountry($event)"></ion-searchbar>
+            <ion-list *ngIf="showhospitalList">
+              <ion-item (click)="medClicked(list)" *ngFor="let list of cityLists">{{list}}
+              </ion-item>
+            </ion-list></div>
+          <div class="card">
+            <ion-label>Hospital Name</ion-label>
+            <ion-select [(ngModel)]="hospitalObj.hospitalname" (ionChange)="getDocList($event.target)">
+              <ion-select-option *ngFor="let list of hospitalList">{{list.hospitalname}}</ion-select-option>
+            </ion-select>
+          </div>
+          <div class="card">
+            <ion-label>Doctor Name</ion-label>
+            <ion-select [(ngModel)]="hospitalObj.doctorname">
+              <ion-select-option *ngFor="let list of DocterList">{{list.doctorname}}</ion-select-option>
+            </ion-select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+            Personal Details <i class="fa fa-angle-down"></i>
+          </a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div class="edit-section">
+            <button class="expan-image" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+              <i class="fa fa-expand" aria-hidden="true"></i>
+            </button>
+            <button (click)="updateProfile()" class="editss"><i class="fa fa-floppy-o" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="basic-table-info">
+            <!-- <h4 class="header-title">personal Details</h4> -->
+            <div class="one-part-edit">
+              <label>Name</label>
+              <input type="text" [(ngModel)]="userData.name">
+            </div>
+            <div class="one-part-edit">
+              <label>Email</label>
+              <input type="text" [(ngModel)]="userData.email">
+            </div>
+            <div class="one-part-edit">
+              <div class="one-part-otp" style="width:70%">
+                <label>Mobile Number</label>
+                <input style="width: 183px !important;" type="text" [(ngModel)]="userData.mobile_number"
+                  (keyup)="sendOtp()">
+              </div>
+            </div>
+            <div class="one-part-edit">
+              <ion-item class="times" *ngIf="enable_Timer"
+                style="border-bottom: none !important;background: transparent;">
+                <span class="expired-class" [style.display]="none">Your Otp will expire in </span>
+                <div class="countdown">
+                  <div class="timer" [style.display]="none">180</div>
+                  <svg>
+                    <circle r="15" cx="20" cy="20"></circle>
+                  </svg>
+                </div>
+                <ion-button color="tertiary" type="button" (click)="sendOtp()" class="timer2">Resend</ion-button>
+              </ion-item>
+              <ion-item class="one-part-edit" color="transparent" no-padding lines="none" [disabled]="enable_otp">
+                <label position="floating">Verify Otp</label>
+                <input type="tel" [(ngModel)]="userData.otp" (keyup)="matchOtp()" maxlength="4">
+              </ion-item>
+            </div>
+            <div class="one-part-edit">
+              <label>Do You Wish To Display Your Phone Number In Your Pet Profile?</label>
+              <ion-list>
+                <ion-radio-group value="biff">
+                  <ion-item>
+                    <ion-label>Yes</ion-label>
+                    <ion-radio slot="start" value="biff"></ion-radio>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>No</ion-label>
+                    <ion-radio slot="start" value="buford"></ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </ion-list>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+            Hospital Information <i class="fa fa-angle-down"></i>
+          </a>
+        </h4>
+      </div>
+      <div id="collapse4" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div class="edit-part">
+            <div class="edit-section">
+              <button class="expan-image" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                <i class="fa fa-expand" aria-hidden="true"></i>
+              </button>
+              <button (click)="savePhoto()" class="editss" ><i
+                  class="fa fa-trash" aria-hidden="true"></i>
+              </button>
+              <button class="editss" data-toggle="modal" data-target="#myModal"><i
+                  class="fa fa-plus" aria-hidden="true"></i>
+              </button>&nbsp;
+            </div>
+            <div>
+              <div class="one-part-edit">
+                <table class="edit-hospital">
+                  <tr>
+                    <th>S.No</th>
+                    <!-- <th>City</th> -->
+                    <th>Hospital Name</th>
+                    <th>Docter Name</th>
+                  </tr>
+                  <tr *ngFor="let list of userData.doctorlist">
+                    <td>
+                      <ion-checkbox></ion-checkbox>&nbsp;1
+                    </td>
+                    <!-- <td>Chennai</td> -->
+                    <td>{{list.hospitalname}}</td>
+                    <td>{{list.doctorname}}</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+            Change Password <i class="fa fa-angle-down"></i>
+          </a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div class="edit-part">
+            <div class="edit-section">
+              <button class="expan-image" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                <i class="fa fa-expand" aria-hidden="true"></i>
+              </button>
+              <button (click)="updateProfile()" class="editss"><i class="fa fa-floppy-o" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div>
+              <div class="one-part-edit">
+                <label>Old Password</label>
+                <input type="text">
+              </div>
+              <div class="one-part-edit">
+                <label>New Password</label>
+                <input type="text">
+              </div>
+              <div class="one-part-edit">
+                <label>Confirm Password</label>
+                <input type="text">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+            Change Address <i class="fa fa-angle-down"></i>
+          </a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div class="edit-section">
+            <button class="expan-image" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+              <i class="fa fa-expand" aria-hidden="true"></i>
+            </button>
+            <button (click)="updateProfile()" class="editss"><i class="fa fa-floppy-o" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div>
+            <div class="one-part-edit">
+              <label (click)="EditAddress(userData)">Change Address</label>
+            </div>
+            <div class="one-part-edit">
+              <label>Area</label>
+              <input type="text" placeholder="EnterName" [(ngModel)]="userData.area">
+            </div>
+            <div class="one-part-edit">
+              <label>country</label>
+              <input type="text" placeholder="EnterName" [(ngModel)]="userData.country">
+            </div>
+            <div class="one-part-edit">
+              <label>state</label>
+              <input type="text" placeholder="EnterName" [(ngModel)]="userData.state">
+            </div>
+            <div class="one-part-edit">
+              <label>city</label>
+              <input type="text" placeholder="EnterName" [(ngModel)]="userData.city">
+            </div>
+            <div class="one-part-edit">
+              <label>Zip Code</label>
+              <input type="text" placeholder="EnterName" [(ngModel)]="userData.zip_code">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

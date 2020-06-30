@@ -1,0 +1,23 @@
+<ng-content>
+
+</ng-content>
+
+<ion-spinner  class="ionspinner"  *ngIf="page==1 && loader && !refresh"></ion-spinner>
+<div class="userList padding15 margin10" *ngIf="noRecordFound">
+    <ion-list class="noRecordFound" lines="none">
+    <ion-item text-center>
+        <ion-label>{{"No data found"}}</ion-label>
+    </ion-item>
+    </ion-list>
+</div>
+<div class="retry userList padding15 margin10" *ngIf="networkErr">
+    <ion-list class="noInternet">
+    <ion-item text-center>
+        {{"No network.. Retrying in" }} {{retryCount}}
+        <button (click)="retry()">
+        {{"Retry"}}
+        </button>
+    </ion-item>
+    </ion-list>
+</div>
+

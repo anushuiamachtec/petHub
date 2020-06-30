@@ -1,0 +1,67 @@
+
+<ion-header class="editprofile">
+    <div class="dashboard-head">    
+      <h4><img  [routerLink]="['/home']" src="../../assets/icon/left-arrow.png"> Notifications
+      </h4>
+      <!-- <button (click)="presentActionSheet()"><img src="../../assets/icon/more.png"></button> -->
+
+      
+    </div>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <label (click)="CallSelect()"><i class="fa fa-check" aria-hidden="true"></i>Select</label>&nbsp;&nbsp;
+      <label (click)="clearAll()"><i class="fa fa-trash" aria-hidden="true"></i>ClearAll</label>
+  <div class="card"  *ngFor="let list of totalLists;  let i = index">
+    <ion-card   >
+      <ion-card-header>
+        <ion-checkbox *ngIf = "checksonce" (click)="pushId(list._id, i)"></ion-checkbox>
+        <div class="card card-img">
+          <img alt="UploadImage" (click)="fullsize(shop.imageUrl)"  src="../../assets/icon/dogs3.jpg">
+        </div>
+        <div class="card card-details">        
+          <label class="head-shop">{{list.info.petownerId}} </label><br>
+          <label class="head-shop">{{list.content}} </label>  
+        <label class="text-right">{{list.unread}}</label>
+          <div class="footer-data">
+            <div class="text-right footer1 leftside">       
+            <button *ngIf="list.nodificationType ==  'Message'" class="locate1 btn-primary text-right"  (click)="viewMsg(list);"><i class="fa fa-eye" aria-hidden="true">&nbsp; view Message</i>
+            </button>
+            <button *ngIf="list.nodificationType ==  'Chat'" class="locate1 btn-primary text-right"  
+            (click)="viewProfile(list);sendNotification(list.info.petId)"> <i class="fa fa-eye" aria-hidden="true">
+              &nbsp; view Profile</i></button>
+          </div>
+          </div>         
+        </div>      
+      </ion-card-header>
+    </ion-card>
+  </div>
+</ion-content>
+<ion-footer>
+    <div *ngIf = "checksonce" class="delete-function">
+    <button (click)="deleteAll()"><i class="fa fa-trash"></i>&nbsp;Delete </button> &nbsp;
+    <button (click)="cancelNotify()"><i class="fa fa-times"></i>&nbsp;cancel</button>
+  </div>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button [routerLink]="['/home']">
+          <ion-icon name="home"></ion-icon>
+          <ion-label>Home</ion-label>
+        </ion-tab-button>
+        <ion-tab-button  [routerLink]="['/home']">
+          <ion-icon name="heart"></ion-icon>
+          <ion-label>favourite</ion-label>
+        </ion-tab-button>
+        <ion-tab-button style="color: #000">
+          <ion-icon name="notifications"></ion-icon>
+          <ion-label>Notification</ion-label>
+          <ion-badge *ngIf="totalNewLists > 0">{{totalNewLists}}</ion-badge>
+        </ion-tab-button>
+        <ion-tab-button [routerLink]="['/searchPets']">
+          <ion-icon name="search"></ion-icon>
+          <ion-label>Filter</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

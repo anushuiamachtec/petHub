@@ -1,0 +1,253 @@
+<ion-header *ngIf="!searchResults">
+  <h4> <span><img [routerLink]="['/home']" src="../../../assets/icon/left-arrow.png"></span>
+    Filter Profile</h4>
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="home-tab" (click)="open1()"  role="tab" aria-controls="home"
+        aria-selected="true">Filter</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  data-toggle="tab" (click)="open2()"  role="tab" aria-controls="profile"
+        aria-selected="false">Search By Id</a>
+    </li>
+  </ul>
+</ion-header>
+<ion-content  *ngIf="!searchResults"   padding>
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+
+  <div >
+    <div  *ngIf = "home">
+      <div class="basic-table-info">
+        <table>
+          <tr>
+            <td>
+              <p>Search by Category:</p>
+              <ion-searchbar style="width: 75%;" [(ngModel)]="searchObj.categoryName"
+                (ionInput)="searchCountry('categoryName',searchObj.categoryName)"></ion-searchbar>
+              <ion-list *ngIf="showcatList">
+                <ion-item (click)="medClicked('categoryName', cat)" *ngFor="let cat of categoryArray">{{cat}}
+                </ion-item>
+              </ion-list>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Search by Gender:</p>
+              <ion-select placeholder="Select Gender" [(ngModel)]="searchObj.gender"
+                (ionChange)="changeLists(undefined, 'gender')">
+                <ion-select-option>Male</ion-select-option>
+                <ion-select-option>Female</ion-select-option>
+
+              </ion-select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Search by Breeds:</p>
+              <ion-searchbar style="width: 75%;" [(ngModel)]="searchObj.breedName" (keyup)="searchCountry('breedName',searchObj.breedName)">
+              </ion-searchbar>
+              <ion-list *ngIf="showbreedList">
+                <ion-item (click)="medClicked('breedName', breeds)" *ngFor="let breeds of breedsLists">{{breeds}}
+                </ion-item>
+              </ion-list>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Search by Country:</p>
+              <ion-searchbar style="width: 75%;" [(ngModel)]="searchObj.countryName"
+                (keyup)="searchCountry('countryName',searchObj.countryName)"></ion-searchbar>
+              <ion-list *ngIf="showcountryList">
+                <ion-item (click)="medClicked('countryName', country)" *ngFor="let country of countries">
+                  {{country.name}}
+                </ion-item>
+              </ion-list>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Search by State:</p>
+              <ion-searchbar style="width: 75%;" [(ngModel)]="searchObj.stateName"
+                (keyup)="searchCountry('stateName',searchObj.stateName)"></ion-searchbar>
+              <ion-list *ngIf="showstateList">
+                <ion-item (click)="medClicked('stateName', state)" *ngFor="let state of states">{{state}}
+                </ion-item>
+              </ion-list>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Search by City:</p>
+              <ion-searchbar style="width: 75%;" [(ngModel)]="searchObj.cityName"
+                (keyup)="searchCountry('cityName',searchObj.cityName)"></ion-searchbar>
+              <ion-list *ngIf="showcityList">
+                <ion-item (click)="medClicked('cityName', state)" *ngFor="let city of cities">{{city}}
+                </ion-item>
+              </ion-list>
+            </td>
+          </tr>
+        </table>
+      </div>
+   
+    </div>
+    <div  *ngIf = "!home">
+      <div class="search-PetId">
+        <ion-label>Search By PetId</ion-label>
+        <ion-searchbar style="width: 75%;" [(ngModel)]="searchObj.Id"></ion-searchbar>
+        <button class="search-btn" (click)="searchProfile($event)"><i class="fa fa-search"></i></button>
+      </div>
+    </div>
+  </div>
+</ion-infinite-scroll>
+</ion-content>
+<ion-footer *ngIf="!searchResults">
+  <ion-toolbar>
+      <div class="search-button">
+        <button class="search" (click)="showMatches()"><i class="fa fa-search"></i>&nbsp;Apply</button>
+
+      </div>
+  </ion-toolbar>
+</ion-footer >
+
+<!-- <ion-header *ngIf="searchResults">
+  <h4> <span><img (click)="backMenu()" src="../../../assets/icon/left-arrow.png"></span>
+    Search Results</h4>
+</ion-header> -->
+<ion-header class="editprofile" *ngIf="searchResults">
+  <div class="dashboard-head">
+       <span (click)="openFirst()"><img class="logout" (click)="backMenu()" src="../../../assets/icon/left-arrow.png">
+      </span>
+      <!--   <h4> <span><img (click)="backMenu()" src="../../../assets/icon/left-arrow.png"></span>
+    Search Results</h4> -->
+      <ion-slides >
+    <ion-slide *ngFor="let pairpet of ownerPetList" (click)="changeLists(pairpet, 'image')">
+<!-- <img src="../../assets/icon/dogs3.jpg"> -->
+<div  style="background: url('../../assets/icon/dogs3.jpg'); 
+    height: 37px;
+    width: 37px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 36px;
+    background-position: 100% 100%;
+    position: relative;
+    bottom: 14px;">
+</div>
+<br />
+<div class="petlistss">
+   
+
+        {{pairpet.pet_name}} 
+     
+</div>
+<!-- <div class="pet-list"> -->
+    </ion-slide>
+      <!-- <ion-slide class ="filter" (click) = " openFirst1() "><img class ="filter-icon" src="../../assets/icon/filter.png"> Filters</ion-slide> -->
+  </ion-slides>
+  </div>
+</ion-header>
+<ion-content [fullscreen]="true" *ngIf="searchResults">
+
+  <div class="card" *ngIf="IsMyMatches">
+     <div class="box-title">{{pairPetList.length}} Search match <a>Search Results</a></div> 
+    <ion-card *ngFor="let pairpet of pairPetList">
+      <ion-card-header (click)="purchaseStore(shop)">
+        <div class="card card-img">
+          <img alt="UploadImage" (click)="fullsize(shop.imageUrl)" src="../../assets/icon/dogs3.jpg">
+        </div>
+        <div class="card card-details">
+          <label class="head-shop">{{pairpet.pet_name}} </label>
+          <br />
+          <label class="head-shop">{{pairpet.pet_age}},{{pairpet.pet_gender}},{{pairpet.pet_breed}}</label><br />
+          <label class="head-shop"><i class="fa fa-map-marker"
+              aria-hidden="true"></i>&nbsp;{{pairpet.ownerdetails.address.country}},{{pairpet.ownerdetails.address.state}},{{pairpet.ownerdetails.address.city}}</label>
+          <label class="locate1 text-left"></label>
+          <br />
+        </div>
+        <div class="footer-data">
+          <div class="text-left footer1">
+            <button style="background-color: transparent;" (click)="AddFav(pairpet, true)"
+              class="locate1 left-fav btn-primary text-right"><i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;
+             Favourite</button>
+             <button style="background-color: transparent;" (click)="AddFav(pairpet, true)"
+              class="locate1 left-fav btn-primary text-right"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+             Interested</button>
+          </div>
+          <div class="text-right footer1 leftside">
+            <!-- <button class="locate1 btn-primary text-right"  (click)="purchaseStore(shop)"><i class="fa fa-times" aria-hidden="true"></i>
+            </button> -->
+            <button class="locate1 btn-primary text-right"
+              (click)="viewProfile(pairpet);sendNotification(pairpet.petId)"><i class="fa fa-eye"
+                aria-hidden="true">&nbsp;View</i>
+            </button>
+          </div>
+        </div>
+      </ion-card-header>
+    </ion-card>
+  </div>
+    <div class="card" *ngIf="!IsMyMatches">
+  <div class="box-title">{{favList.length}} Favourite List <a>Search Results</a></div> 
+    <ion-card *ngFor="let pairpet of favList">
+      <ion-card-header>
+        <div class="card card-img">
+          <img alt="UploadImage" (click)="fullsize(pairpet.imageUrl)" src="../../assets/icon/dogs3.jpg">
+        </div>
+        <div class="card card-details">
+          <label class="head-shop">{{pairpet.pet_name}} </label>
+          <br />
+          <label class="head-shop">{{pairpet.pet_age}},{{pairpet.pet_gender}},{{pairpet.pet_breed}}</label><br />
+          <label class="head-shop"><i class="fa fa-map-marker"
+              aria-hidden="true"></i>&nbsp;{{pairpet.ownerdetails.address.country}},{{pairpet.ownerdetails.address.state}},{{pairpet.ownerdetails.address.city}}</label>
+          <label class="locate1 text-left"></label>
+          <br />
+        </div>
+        <div class="footer-data">
+          <div class="text-left footer1">
+            <button style="background-color: transparent;" (click)="AddFav(pairpet, false)"
+              class="locate1 left-fav btn-primary text-right"><i class="fa fa-heart"
+                aria-hidden="true"></i>&nbsp;
+              Remove Favourite</button>
+                 <button style="background-color: transparent;" (click)="AddFav(pairpet, true)"
+              class="locate1 left-fav btn-primary text-right"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+             Interested</button>
+          </div>
+          <div class="text-right footer1 leftside">
+            <!-- <button class="locate1 btn-primary text-right"  (click)="purchaseStore(shop)"><i class="fa fa-times" aria-hidden="true"></i>
+        </button> -->
+            <button class="locate1 btn-primary text-right" (click)="viewProfile(pairpet)"><i class="fa fa-view"
+                aria-hidden="true">&nbsp; view</i>
+            </button>
+          </div>
+        </div>
+      </ion-card-header>
+    </ion-card>
+  </div>
+</ion-content>
+<ion-footer *ngIf="searchResults">
+    <ion-toolbar>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+    
+  
+      <ion-tab-button (click)="getFav(true)">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+  <ion-tab-button (click)="getFav(false)">
+        <ion-icon name="heart"></ion-icon>
+        <ion-label>favourite</ion-label>
+      </ion-tab-button>
+          <ion-tab-button [routerLink]="['/Notifications']">
+        <ion-icon name="notifications"></ion-icon>
+        <ion-label>Notification</ion-label>
+        <ion-badge>{{totalNewLists}}</ion-badge>
+      </ion-tab-button>
+      <ion-tab-button (click)="searchPets()">
+        <ion-icon name="search"></ion-icon>
+        <ion-label>Filter</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>
+  </ion-footer>
+<!-- <ion-router-outlet  id="main1"></ion-router-outlet> -->

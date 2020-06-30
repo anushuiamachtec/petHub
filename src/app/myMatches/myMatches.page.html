@@ -1,0 +1,211 @@
+ <ion-header class="editprofile" *ngIf="IsMyMatches">
+  <div class="dashboard-head">
+    <span (click)=" openFirst()"><img class="logout" src="../../assets/icon/menu.png">
+    </span>
+    <ion-slides *ngIf="ownerLists.length > 1 && IsMyMatches">
+      <ion-slide *ngFor="let pairpet of ownerLists" (click)="changeLists(pairpet, 'image')">
+        <div style="background: url('../../assets/icon/dogs3.jpg'); height: 37px; width: 37px; 
+         background-size: cover; background-repeat: no-repeat;border-radius: 36px; 
+         background-position: 100% 100%;position: relative; bottom: 14px;">
+        </div>
+        <br />
+        <div class="petlistss">
+          {{pairpet.pet_name}}
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div>
+</ion-header>
+<ion-header  *ngIf="!IsMyMatches">
+  <div class="dashboard-head">
+    <span (click)="openFirst()"><img class="logout" (click)="getFav(true)" src=".../../assets/icon/left-arrow.png">
+      <h4>Favourite List</h4>
+    </span>
+  </div>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="card" *ngIf="IsMyMatches">
+    <div class="box-title" *ngIf="pairPetList.length">{{pairPetList.length}} Extended match </div>
+    <div *ngIf="!pairPetList.length">Welcome ...............</div>
+    <ion-card *ngFor="let pairpet of pairPetList">
+      <ion-card-header>
+        <div class="card card-img">
+          <img alt="UploadImage" (click)="fullsize(shop.imageUrl)" src="../../assets/icon/dogs3.jpg">
+        </div>
+        <div class="card card-details">
+          <label class="head-shop">{{pairpet.pet_name}} </label>
+          <br />
+          <label class="head-shop">{{pairpet.pet_age}},{{pairpet.pet_gender}},{{pairpet.pet_breed}}</label><br />
+          <label class="head-shop"><i class="fa fa-map-marker"
+              aria-hidden="true"></i>&nbsp;{{pairpet.ownerdetails.address.country}},{{pairpet.ownerdetails.address.state}},{{pairpet.ownerdetails.address.city}}</label>
+          <label class="locate1 text-left"></label>
+          <br />
+        </div>
+     <!--    <div class="footer-data">
+          <div class="text-left footer1">
+            <button style="background-color: transparent;" (click)="AddFav(pairpet, true)"
+              class="locate1 left-fav btn-primary text-right"><i class="fa fa-heart-o" aria-hidden="true"
+                *ngIf="!pairpet.favouritestatus"></i>
+              <i class="fa fa-heart" *ngIf="pairpet.favouritestatus" aria-hidden="true"></i>Favourite</button>
+          </div>
+          <div class="text-right footer1 leftside">
+            <button class="locate1 btn-primary text-right" (click)="viewProfile(pairpet)"><i class="fa fa-check"
+                aria-hidden="true">&nbsp;View Profile</i>
+            </button>
+          </div>
+          <div class="text-right footer1 leftside">
+            <button class="locate1 btn-primary text-right" (click)="sendIntrest(pairpet)"><i class="fa fa-check"
+                aria-hidden="true">&nbsp;Send Interest</i>
+            </button>
+          </div>
+        </div> -->
+           <div class="footer-data">
+          <div class="text-left footer1">
+            <button style="background-color: transparent;" (click)="AddFav(pairpet, true)"
+              class="locate1 left-fav btn-primary text-right"><i class="fa fa-heart-o" aria-hidden="true"
+              *ngIf="!pairpet.favouritestatus"></i>
+            <i class="fa fa-heart" *ngIf="pairpet.favouritestatus" aria-hidden="true"></i>
+             Favourite</button>
+             <button style="background-color: transparent;" (click)="sendIntrest(pairpet)"
+              class="locate1 left-fav btn-primary text-right"><i class="fa fa-check" aria-hidden="true"></i>
+             Interested</button>
+          </div>
+          <div class="text-right footer1 leftside">
+            <!-- <button class="locate1 btn-primary text-right"  (click)="purchaseStore(shop)"><i class="fa fa-times" aria-hidden="true"></i>
+            </button> -->
+            <button class="locate1 btn-primary text-right"
+              (click)="viewProfile(pairpet);sendNotification(pairpet.petId)"><i class="fa fa-eye"
+                aria-hidden="true">&nbsp;View</i>
+            </button>
+          </div>
+        </div>
+      </ion-card-header>
+    </ion-card>
+  </div>
+  <div class="card" *ngIf="!IsMyMatches">
+    <ion-card *ngFor="let pairpet of favList">
+      <ion-card-header>
+        <div class="card card-img">
+          <img alt="UploadImage" (click)="fullsize(pairpet.imageUrl)" src="../../assets/icon/dogs3.jpg">
+        </div>
+        <div class="card card-details">
+          <label class="head-shop">{{pairpet.pet_name}} </label>
+          <br />
+          <label class="head-shop">{{pairpet.pet_age}},{{pairpet.pet_gender}},{{pairpet.pet_breed}}</label><br />
+          <label class="head-shop"><i class="fa fa-map-marker"
+              aria-hidden="true"></i>&nbsp;{{pairpet.ownerdetails.address.country}},{{pairpet.ownerdetails.address.state}},{{pairpet.ownerdetails.address.city}}</label>
+          <label class="locate1 text-left"></label>
+          <br />
+        </div>
+        <div class="footer-data">
+          <div class="text-left footer1">
+            <button style="background-color: transparent;" (click)="AddFav(pairpet, false)"
+              class="locate1 left-fav btn-primary text-right"><i class="fa fa-heart" aria-hidden="true"></i>
+              Remove  Favourite</button>
+                <button  style="background-color: transparent;" class="locate1 left-fav btn-primary text-right" (click)="viewProfile(pairpet)"><i class="fa fa-check"
+                aria-hidden="true">&nbsp;Interested</i>
+            </button>
+          </div>
+          <div class="text-right footer1 leftside">
+            <!-- <button class="locate1 btn-primary text-right"  (click)="purchaseStore(shop)"><i class="fa fa-times" aria-hidden="true"></i>
+        </button> -->
+            <button class="locate1 btn-primary text-right" (click)="viewProfile(pairpet)"><i class="fa fa-eye"
+                aria-hidden="true">&nbsp; view</i>
+            </button>
+          </div>
+        </div>
+      </ion-card-header>
+    </ion-card>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button (click)="getFav(true)">
+          <ion-icon name="home"></ion-icon>
+          <ion-label>Home</ion-label>
+        </ion-tab-button>
+        <ion-tab-button (click)="getFav(false)">
+          <ion-icon name="heart"></ion-icon>
+          <ion-label>favourite</ion-label>
+        </ion-tab-button>
+        <ion-tab-button [routerLink]="['/Notifications']">
+          <ion-icon name="notifications"></ion-icon>
+          <ion-label>Notification</ion-label>
+          <ion-badge *ngIf="totalNewLists > 0">{{totalNewLists}}</ion-badge>
+        </ion-tab-button>
+        <ion-tab-button [routerLink]="['/searchPets']">
+          <ion-icon name="search"></ion-icon>
+          <ion-label>Filter</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>
+<ion-menu side="end" menuId="first" contentId="main" class="my-custom-menu">
+<div>
+  <ion-header class="editprofile1">
+    <div class="cust-details1">
+      <img (click)="selectImage()" src="../../assets/icon/boy.png" alt="Upload Image">
+      <br />
+      <span style="text-decoration: none;">{{userData.name}}<br />{{userData.userId}}</span>
+    </div>
+  </ion-header>
+  <ion-content class="menucontent">
+    <ion-list class="profile">
+      <ion-item [routerLink]="['/viewOwnerProfile']"><img src="../../assets/icon/edit.png"><span> Edit My Details</span>
+      </ion-item>
+     
+      <ion-item [routerLink]="['/viewPetProfile']"><img src="../../assets/icon/dog.png"><span>Pet List</span></ion-item>
+      <ion-item (click)="logout()"><img src="../../assets/icon/power-symbol.png">
+        <span>Logout</span></ion-item>
+    </ion-list>
+  </ion-content>
+</div>
+</ion-menu>
+
+<!--  <ion-item [routerLink]="['/viewPetProfile']"><img src="../../assets/icon/user.png"><span>Pet List</span>
+      </ion-item> -->
+
+   <!--    <ion-menu side="start" menuId="first" contentId="content1">
+        <ion-header class="editprofile1">
+          <ion-toolbar>
+<div class="cust-details1">
+      <img (click)="selectImage()" src="../../assets/icon/boy.png" alt="Upload Image">
+      <br />
+      <span style="text-decoration: none;">{{userData.name}}<br />{{userData.userId}}</span>
+    </div>          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+                  <ion-list class="profile">
+                      <ion-menu-toggle auto-hide="true">
+
+      <ion-item [routerLink]="['/viewOwnerProfile']"><img src="../../assets/icon/edit.png"><span> Edit My Details</span>
+      </ion-item>
+     
+      <ion-item [routerLink]="['/viewPetProfile']"><img src="../../assets/icon/dog.png"><span>Pet List</span></ion-item>
+      <ion-item (click)="logout()"><img src="../../assets/icon/power-symbol.png">
+        <span>Logout</span></ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+        </ion-content>
+      </ion-menu> -->
+
+<!-- <ion-menu side="start" menuId="first" contentId="main">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Start Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu> -->
+<!-- <ion-router-outlet id="main"></ion-router-outlet> -->

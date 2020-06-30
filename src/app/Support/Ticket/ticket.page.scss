@@ -1,0 +1,254 @@
+ion-toolbar{--background: rgb(13, 32, 46) !important;}
+.transaction-title{font-weight: 600;display: inline-block;font-size: 18px;color:#0D202E;}
+.upload-icon{float:right;font-size: 24px;}
+.transaction-text{margin-bottom:5px !important;font-size: 16px;display: inline-block;}
+.transaction-date{font-size: 11px;}
+.initiated-button{float:right;font-size: 11px;}
+img.backData {
+    max-width: 14px !important;
+    margin: 5px 10px 10px 8px !important;
+}
+ion-toolbar.in-toolbar, ion-toolbar.in-toolbar.md.toolbar-title-default.hydrated, ion-header.ios.header-ios.header-collapse-none.hydrated {
+    --ion-background-color: #0d202e;
+    color: #f6b63b;
+}
+ion-content.masters1{
+    --ion-background-color: radial-gradient(ellipse at center, #ffe9e2 0%, #deba82 100%);
+
+}
+.dateFilter {
+    display: inline-block;
+    width: 46%;
+    margin-left: 14px;
+    margin-top: 12px;
+}
+button.calendar-open {
+    background: #0d202e;
+    padding: 9px;
+    border-radius: 20px;
+    vertical-align: middle;
+    color: #edb03c;
+  }
+.ticket-class ion-row.p-20-px.pt-10-px.pb-10-px.under-line{
+border-bottom: 2px solid #e6c69b;
+border-top: none !important;
+// height: 58px;
+background: #ffffff6e;
+width: 100%;
+margin: 10px auto;
+border-radius: 10px;
+box-shadow: 1px -1px 1px 2px #0d202e2b;
+}
+.dashboard-head label {
+    font-size: 18px !important;
+    margin-top: 5px;
+}
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 56px;
+    right: 0px;
+    background-color: #e4e1e1;
+    overflow-x: hidden;
+    padding-top: 7px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+.search-hero {
+    // float: left;
+    margin-top: 13px;
+    margin-left: 16px;
+    display: inline-block;
+}
+.search-hero.left {
+    align-items: right;
+    // float: right;
+    margin-right: 62px;
+    margin-top: 13px;
+}
+.search-hero label {
+    color: #0d202e;
+    font-family: Poppins;
+    font-weight: bold;
+    font-size: 13px;
+}
+.search-hero {
+    display: inline-flex;
+}
+.search-hero{
+    display: block;
+}
+.search-hero {
+    // float: left;
+    margin-top: 13px;
+    margin-left: 16px;
+}
+.search-hero.left {
+    // float: right;
+    margin-right: 14px;
+    margin-top: 13px;
+}
+.search-hero label {
+    color: #0d202e;
+    font-family: Poppins;
+    font-weight: bold;
+    font-size: 13px;
+}
+.submit-btn button {
+    background: #0d2012;
+    display: inline-block;
+    width: 42%;
+    margin: 10px;
+    padding: 13px;
+    color: #fff;
+    border-radius: 12px;
+    font-family: Poppins;
+}
+.submit-btn {
+    padding: 21px;
+}
+button.filter{
+    position: absolute;
+    top: 30px;
+    right: 28px;
+    padding: 6px;
+    border-radius: 11px;
+    background: #0d202e;
+    color: #f6b63c;
+}
+button.view {
+    text-align: right;
+    background: #0d2012;
+    font-family: poppins;
+    padding: 3px 15px;
+    border-radius: 21px;
+    box-shadow: -3px 3px 5px 0px #0d2012;
+    color: #f6b63c !important;
+    font-size: 12px;
+    margin-left: 13px;
+}
+.ion-color-secondary {
+    --ion-color-base: #0d202e !important;
+    --ion-color-base-rgb: var(--ion-color-secondary-rgb, 12, 209, 232) !important;
+    --ion-color-contrast: #f6b63c !important;
+    --ion-color-contrast-rgb: var(--ion-color-secondary-contrast-rgb, 255, 255, 255) !important;
+    --ion-color-shade: var(--ion-color-secondary-shade, #0bb8cc) !important;
+    --ion-color-tint: var(--ion-color-secondary-tint, #24d6ea) !important;
+}
+.ion-color-primary {
+    --ion-color-base: #0d202e !important;
+    --ion-color-base-rgb: var(--ion-color-primary-rgb, 56, 128, 255) !important;
+    --ion-color-contrast: #51ca6b !important;
+    --ion-color-contrast-rgb: var(--ion-color-primary-contrast-rgb, 255, 255, 255) !important;
+    --ion-color-shade: var(--ion-color-primary-shade, #3171e0) !important;
+    --ion-color-tint: var(--ion-color-primary-tint, #4c8dff) !important;
+}
+ion-button {
+    width: 87px;
+}
+.filterrtest h4 {
+    margin-left: 10px;
+}
+ion-footer{
+    display: block;
+    position: fixed;
+    -webkit-box-ordinal-group: 2;
+    order: 1;
+    width: 100%;
+    z-index: 10;
+    bottom: 0px;
+}
+// .ticket-class {
+//     border-bottom: 2px solid #0d201224;
+//     background: #0d20121a;
+//     padding: 12px 11px;
+//     width: 95%;
+//     margin: 14px auto;
+// }
+.p-20-px.pt-10-px.pb-10-px.under-line {
+       
+    border-bottom: 2px solid #0d201224;
+    background: #0d20121a;
+    padding: 12px 11px;
+    width: 95%;
+    margin: 14px auto;
+}
+.history1 {
+    display: table-cell;
+    width: 100%;
+    text-align: left;
+    color: #0d202e;
+    vertical-align: middle;
+    margin-top: 6px;
+}
+.history1 label {
+    font-size: 12px;
+}
+.historyview {
+    vertical-align: middle;
+    align-items: center;
+}
+.OneTicket{
+    border-bottom: 2px solid #e6c69b;
+    border-top: none !important;
+    /* height: 55px; */
+    background: #ffffff6e;
+    width: 100%;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 1px -1px 1px 2px #0d202e2b;
+    vertical-align: middle;
+    align-items: center;
+    padding: 18px 10px;
+}
+a.click-view{
+    text-align: center;
+    background: #0d2012;
+    font-family: poppins;
+    padding: 3px 15px;
+    border-radius: 21px;
+    box-shadow: -3px 3px 5px 0px #0d2012;
+    color: #f6b63c !important;
+    font-size: 12px;
+}
+h4.daysHis{
+    font-family: Poppins;
+    font-weight: 500;
+    margin-left: -12px;
+    /* background: #e4c29300; */
+    padding: 11px;
+    color: #0d202e;
+    font-size: 14px;
+    font-weight: bold;
+}
+button.add-ticket {
+    text-align: right;
+    float: right;
+    background: #f6b63c;
+    color: #0d202e;
+    padding: 7px;
+    margin-right: 0px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+i.fa.fa-arrow-left {
+    position: fixed;
+    font-size: 15px;
+    left: 11px;
+    top: 0px;
+    vertical-align: middle;
+    display: table-cell;
+    background: #000;
+    padding: 5px;
+    border-radius: 25px;
+}
+ion-title {
+    text-align: left !important; 
+}
+ion-title label{
+    margin-left: 20px !important;
+    font-size: 16px;
+}
+

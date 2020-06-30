@@ -1,0 +1,15 @@
+
+<ion-header class="editprofile">
+    <div class="dashboard-head">    
+      <h4 (click)="openFirst()"><img src="../../assets/icon/left-arrow.png"> Send Message To {{msgUserData.userId}}
+      </h4>
+
+        </div>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="card" >
+    <ion-label>Enter Drop Message</ion-label>
+   <ion-textarea rows="4" cols="50" [(ngModel)]="MessageContent"></ion-textarea>
+   <button (click)="sendMsg()"><i class="fa fa-send"></i>&nbsp;Send</button>
+  </div>
+</ion-content>

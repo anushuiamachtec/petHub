@@ -1,0 +1,213 @@
+<ion-content [fullscreen]="true" class="no-scroll">
+  <div style="position: fixed; top: 0px; width: 100%; height: 50px;">
+    <img src="../../assets/pk.png" style="position: fixed; right: 51px; top: -32px;" />
+    <table style="width: 100%;">
+      <tr>
+        <td style="float: left;">
+          <img src="../../assets/1.png" style="margin-left: 15px; margin-top: 15px;" />
+          <!--
+          <div style="background-color: #fff; width: 36px; height: 36px; border-radius: 18px; text-align: center; padding: 3px 0px; margin-top: 10px; margin-left: 10px;"><ion-icon style="font-size: 30px; color: #777373;" name="person-circle-outline"></ion-icon></div>
+          -->
+        </td>
+
+        <td style="float: right;">
+          <img src="../../assets/2.png" style="margin-right: 10px; margin-top: 18px;" />
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="container">
+    <br /><br /><br />
+
+    <div class="main-container">
+      <img src="../../assets/pk.png" style="position: fixed; right: 17px; width: 50px; padding-top: 7px;" />
+      <p class="main-header"><br />Pet Registration</p>
+
+      <table style="width: 100%;">
+        <tr>
+          <td>
+            <div class="pet-dropDown">
+              What pet you have ?
+              <ion-select style="float: right; margin-top: -10px;" [(ngModel)]="petObj.category"
+                (ionChange)="changeLists($event)">
+                <ion-select-option>Dog</ion-select-option>
+                <ion-select-option>Cat</ion-select-option>
+                <ion-select-option>Goat</ion-select-option>
+                <ion-select-option>Sheep</ion-select-option>
+                <ion-select-option>Cow</ion-select-option>
+                <ion-select-option>Buffalo</ion-select-option>
+                <ion-select-option>Horse</ion-select-option>
+                <ion-select-option>Hen</ion-select-option>
+                <ion-select-option>Parrot</ion-select-option>
+              </ion-select>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <table style="width: 100%;">
+        <tr>
+          <td></td>
+
+          <td colspan="2" style="
+              text-align: center;
+              color: gray;
+              font-size: 12px;
+              font-weight: bold;
+              padding-bottom: 5px;
+            " class="pet-age">
+            Pet Age
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <!--
+         <div style="background-color: #f3e3e3; height: 32px; margin-left: 10px; padding: 9px 9px; font-size: 12px; font-weight: bold; color: gray; border-radius: 5px; width: 90%;">
+           Bread of your pet ? 
+         
+        </div>
+      -->
+            <!-- <input type="text" placeholder="Bread of your pet ?" class="inputtype" /> -->
+            <ion-searchbar id="breedId" [(ngModel)]="petObj.pet_breed" (keyup)="searchCountry($event, 'petreg')">
+            </ion-searchbar>
+            <ion-list class="breadlist" *ngIf="showbreedList">
+              <ion-item (click)="medClicked(breeds, 'petreg')" *ngFor="let breeds of breedsLists">{{breeds}}
+              </ion-item>
+            </ion-list>
+          </td>
+
+          <td style="width: 18%;">
+            <!--
+        <div style="background-color: #f3e3e3; height: 32px; margin-left: 10px; padding: 9px 9px; font-size: 12px; font-weight: bold; color: gray; border-radius: 5px; width: 75%;">
+        Yr
+        
+       </div>
+
+      -->
+
+            <input style="
+                box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+                margin-left: 16px;
+              " type="text" placeholder="Yr" class="inputtype1" [(ngModel)]="petObj.ageyears"
+              (change)="checkDigit($event.target, 'petreg-year')" />
+          </td>
+
+          <td style="width: 18%;">
+            <!--
+
+      
+      <div style="background-color: #f3e3e3; height: 32px; margin-left: 10px; padding: 9px 9px; font-size: 12px; font-weight: bold; color: gray; border-radius: 5px; width: 75%;">
+      Mn
+      
+     </div>-->
+
+            <input style="box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);" type="text" placeholder="Mn" class="inputtype1"
+              [(ngModel)]="petObj.agemonth" (change)="checkDigit($event.target, 'petreg-month')" />
+          </td>
+        </tr>
+      </table>
+      <br />
+
+      <table style="width: 100%;">
+        <tr>
+          <td style="width: 48%;">
+            <!--
+         <div style="background-color: #f3e3e3; height: 32px; margin-left: 10px; padding: 9px 9px; font-size: 12px; font-weight: bold; color: gray; border-radius: 5px;">
+           Pet name ? 
+        </div>
+
+      -->
+            <input placeholder="Pet Name ? " class="inputtype" [(ngModel)]="petObj.pet_name" />
+          </td>
+          <td style="text-align: left;">
+            <!-- <div class="radio-item">
+              <input type="radio" checked id="male" name="gender" value="male" />
+              <label for="ritema" style="font-size: 12px; font-weight: bold;">Male</label>
+            </div>
+            <div class="radio-item radio-item-female">
+              <input type="radio" id="female" name="gender" value="female" />
+              <label for="ritemb" style="font-size: 12px; font-weight: bold;">Female</label>
+            </div> -->
+            <div class="">
+              <ion-radio-group value="biff" [(ngModel)]="petObj.pet_gender">
+                <ion-item>
+                  <ion-label>Male</ion-label>
+                  <ion-radio slot="start" value="male"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Female</ion-label>
+                  <ion-radio slot="start" value="female"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <br />
+
+      <table style="width: 100%;">
+        <tr>
+          <td style="width: 48%;">
+            <!--
+         <div style="background-color: #f3e3e3; height: 32px; margin-left: 10px; padding: 9px 9px; font-size: 12px; font-weight: bold; color: gray; border-radius: 5px;">
+           Pet vaccination ? 
+        </div>
+      -->
+            <label class="inputtype">Pet Vaccination ?</label>
+          </td>
+          <td style="text-align: left;">
+            <ion-radio-group value="biff" [(ngModel)]="petObj.petvaccination">
+              <ion-item>
+                <ion-label>Yes</ion-label>
+                <ion-radio slot="start" value="yes"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>No</ion-label>
+                <ion-radio slot="start" value="no"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </td>
+        </tr>
+      </table>
+
+      <br />
+
+      <table style="width: 100%;">
+        <tr>
+          <td style="width: 48%;">
+            <!--
+           <div style="background-color: #f3e3e3; height: 32px; margin-left: 10px; padding: 9px 9px; font-size: 12px; font-weight: bold; color: gray; border-radius: 5px;">
+           Pet deworming ? 
+        </div>
+      -->
+            <label class="inputtype">Pet Deworming ?</label>
+          </td>
+          <td style="text-align: left;">
+            <ion-radio-group value="biff" [(ngModel)]="petObj.petdeworming">
+              <ion-item>
+                <ion-label>Yes</ion-label>
+                <ion-radio slot="start" value="yes"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>No</ion-label>
+                <ion-radio slot="start" value="no"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </td>
+        </tr>
+      </table>
+      <br />
+      <span style="margin-left: 15px; color: gray; font-size: 15px;">
+        Description:</span>
+      <br />
+      <div style="height: 24%; min-height: 116px; padding: 3px 8px;">
+        <textarea style="box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);" [(ngModel)]="petObj.pet_description"
+          placeholder="Tell about your pet"></textarea>
+      </div>
+    </div>
+    <div style="text-align: center;">
+      <span style="color: #f7afb8;">●</span><span style="color: #fff;" (click)="getValues()">●</span>
+    </div>
+  </div>
+</ion-content>

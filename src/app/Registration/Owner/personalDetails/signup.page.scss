@@ -1,0 +1,767 @@
+.form-control {
+  display: block;
+  /*width: 280px;*/
+  height: 40px;
+  padding: 3px 15px;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #8b8888;
+  background-color: #fff;
+  background-image: none;
+  /*border: 1px solid white;*/
+  border: white;
+  border-radius: 12px;
+}
+.timer2 {
+  display: none;
+}
+
+.countdown {
+  position: relative;
+  margin-top: 0px;
+  height: 28px;
+  width: 38px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.timer {
+  color: #f6b63b !important;
+  display: inline-block;
+  line-height: 40px;
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  transform: rotateY(-180deg) rotateZ(-90deg);
+}
+svg circle {
+  stroke-dasharray: 113px;
+  stroke-dashoffset: 0px;
+  stroke-linecap: round;
+  stroke-width: 2px;
+  stroke: #f6b63b;
+  fill: none;
+  animation: countdown 180s linear infinite forwards;
+}
+.form-control3 {
+  display: block;
+  /*width: 280px;*/
+  height: 54px;
+  padding: 3px 5px;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #8b8888;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+}
+
+.form-control2 {
+  display: block;
+  /*width: 280px;*/
+  width: 100%;
+  padding: 3px 18px;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #8b8888;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #fa9aa7;
+  /*border-color: #2e6da4;*/
+}
+.btn {
+  border: none;
+  border-radius: 12px;
+  display: inline-block;
+  padding: 6px 18px;
+  /*margin-bottom: 0;*/
+  /*font-size: 10px;
+  font-weight: 200;
+  line-height: 1.42857143;*/
+  /*text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;*/
+  cursor: pointer;
+}
+/*.fa { transform: scale(1.5,1); }*/
+
+.form-control {
+  display: block;
+  /*width: 280px;*/
+  height: 40px;
+  padding: 3px 15px;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #8b8888;
+  background-color: #fff;
+  background-image: none;
+  /*border: 1px solid white;*/
+  border: white;
+  border-radius: 5px;
+}
+
+.form-control3 {
+  display: block;
+  /*width: 280px;*/
+  height: 54px;
+  padding: 3px 5px;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #8b8888;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+}
+
+.form-control2 {
+  display: block;
+  /*width: 280px;*/
+  width: 100%;
+  padding: 3px 18px;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #8b8888;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #fa9aa7;
+  /*border-color: #2e6da4;*/
+}
+.btn {
+  border: none;
+  border-radius: 12px;
+  display: inline-block;
+  padding: 6px 18px;
+  /*margin-bottom: 0;*/
+  /*font-size: 10px;
+  font-weight: 200;
+  line-height: 1.42857143;*/
+  /*text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;*/
+  cursor: pointer;
+}
+/*.fa { transform: scale(1.5,1); }*/
+
+//Imported CSS
+.first-foot {
+  position: fixed;
+  right: 95px;
+  top: 23px;
+}
+.second-foot {
+  position: fixed;
+  right: -12px;
+  top: 0px;
+}
+.input-field-width {
+  // width: 315px;
+  width: 100%;
+}
+.email {
+  // width: 225px;
+  width: 100%;
+}
+.phone-no {
+  //width: 180px;
+  width: 100%;
+  padding: 3px 55px;
+  // margin: 0pc 9px;
+}
+.main-container {
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #f4e3e3;
+}
+.name-main-container {
+  margin-top: 10px;
+  // margin-left: -5px;
+}
+.forward-icon {
+  margin-top: 5px;
+  margin-left: -10px;
+}
+.opt {
+  width: 100%;
+  padding: 3px 20px;
+  // margin: 0px 10px;
+}
+.phone-code {
+  // width: 38px;
+  width: 100%;
+  padding: 3px 5px;
+}
+.opt-second {
+  width: 100%;
+  //margin-left: 10px;
+}
+
+// OTP Fixes
+
+// .times {
+//   border-bottom: none !important;
+//   background: transparent;
+//   width: 97%;
+//   margin: 0px 7px;
+//   border-radius: 5px;
+//   height: 44px;
+// }
+// .item {
+//   border-bottom: none !important;
+//   background: transparent;
+//   width: 97%;
+//   margin: 0px 7px;
+//   border-radius: 5px;
+//   height: 44px;
+// }
+// .ion-focusable {
+//   border-bottom: none !important;
+//   background: transparent;
+//   width: 97%;
+//   margin: 0px 7px;
+//   border-radius: 5px;
+//   height: 44px;
+// }
+
+.countdown {
+  position: relative;
+  margin-top: -14px;
+  height: 28px;
+  width: 38px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.ion-focusable {
+  border-bottom: none !important;
+  background-color: #f4e3e3;
+  width: 95%;
+  margin: 0px 6px;
+  border-radius: 5px;
+  height: 37px;
+  color: #8b8888;
+  margin-bottom: 5px;
+}
+.cust-opt-container {
+  border-bottom: none !important;
+  background-color: #f4e3e3;
+  width: 97%;
+  margin: 0px 6px;
+  border-radius: 5px;
+  height: 44px;
+  color: #8b8888;
+  display: contents;
+}
+.cust-otp {
+  padding: 0px 5px 10px 5px;
+}
+//Responsive CSS Start
+
+//Nokia Lumia 520
+// @media only screen and (min-width: 320px) and (min-height: 533px) {
+//   .name-main-container {
+//     margin-top: 0px;
+//     margin-left: -5px;
+//   }
+
+//   .form-control {
+//     display: block;
+//     /*width: 280px;*/
+//     height: 23px;
+//     padding: 3px 15px;
+//     font-size: 16px;
+//     line-height: 1.42857143;
+//     color: #8b8888;
+//     background-color: #fff;
+//     background-image: none;
+//     /*border: 1px solid white;*/
+//     border: white;
+//     border-radius: 5px;
+//   }
+//   .input-field-width {
+//     width: 285px;
+//   }
+//   .email {
+//     width: 195px;
+//   }
+//   .phone-no {
+//     width: 145px;
+//     margin-left: 10px;
+//   }
+// }
+
+//Apple 5/SE
+// @media only screen and (min-width: 320px) and (min-height: 568px) {
+//   .main-container {
+//     padding-top: 20px;
+//     padding-left: 15px;
+//     padding-right: 10px;
+//     background-color: #f4e3e3;
+//     height: 100%;
+//   }
+//   .forward-icon {
+//     margin-top: 25px;
+//     margin-left: -10px;
+//   }
+// }
+
+//Galaxy S5// Blackberry
+@media only screen and (min-width: 360px) and (min-height: 640px) {
+  .form-control {
+    display: block;
+    /*width: 280px;*/
+    height: 37px;
+    padding: 3px 15px;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #8b8888;
+    background-color: #fff;
+    background-image: none;
+    /*border: 1px solid white;*/
+    border: white;
+    border-radius: 5px;
+  }
+  // .input-field-width {
+  //   width: 315px;
+  // }
+  // .email {
+  //   width: 215px;
+  // }
+  // .phone-no {
+  //   // width: 160px;
+  //   margin-left: 10px;
+  // }
+  .main-container {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f4e3e3;
+    height: 100%;
+    overflow: hidden;
+  }
+  .phone-code {
+    // width: 38px;
+    width: 100%;
+    padding: 3px 5px;
+  }
+}
+
+//Apple 6/7/8
+// @media only screen and (min-width: 375px) and (min-height: 667px) {
+//   .input-field-width {
+//     width: 330px;
+//   }
+// }
+
+//LG Optimus -Nexus 4
+// @media only screen and (min-width: 384px) and (min-height: 640px) {
+//   .input-field-width {
+//     width: 335px;
+//   }
+//   .email {
+//     width: 240px;
+//   }
+//   .phone-no {
+//     width: 180px;
+//     margin-left: 5px;
+//   }
+// }
+
+//Apple Iphone X
+// @media only screen and (min-width: 375px) and (min-height: 812px) {
+//   .name-main-container {
+//     margin-top: 25px;
+//     margin-left: -5px;
+//   }
+//   .form-control {
+//     display: block;
+//     /*width: 280px;*/
+//     height: 55px;
+//     padding: 3px 15px;
+//     font-size: 16px;
+//     line-height: 1.42857143;
+//     color: #8b8888;
+//     background-color: #fff;
+//     background-image: none;
+//     /*border: 1px solid white;*/
+//     border: white;
+//     border-radius: 5px;
+//   }
+// }
+
+//Pixel 2
+// @media only screen and (min-width: 411px) and (min-height: 731px) {
+//   .name-main-container {
+//     margin-top: 20px;
+//     margin-left: -5px;
+//   }
+//   .form-control {
+//     display: block;
+//     /*width: 280px;*/
+//     height: 45px;
+//     padding: 3px 15px;
+//     font-size: 16px;
+//     line-height: 1.42857143;
+//     color: #8b8888;
+//     background-color: #fff;
+//     background-image: none;
+//     /*border: 1px solid white;*/
+//     border: white;
+//     border-radius: 5px;
+//   }
+//   .input-field-width {
+//     width: 355px;
+//   }
+//   .email {
+//     width: 250px;
+//   }
+//   .phone-no {
+//     width: 190px;
+//     margin-left: 5px;
+//   }
+//   .main-container {
+//     padding-top: 20px;
+//     padding-left: 20px;
+//     padding-right: 10px;
+//     background-color: #f4e3e3;
+//     height: 100%;
+//   }
+//   // .forward-icon {
+//   //   margin-top: 15px;
+//   //   margin-left: -10px;
+//   // }
+// }
+
+//Pixel 2 XL
+// @media only screen and (min-width: 411px) and (min-height: 823px) {
+//   .name-main-container {
+//     margin-top: 30px;
+//     margin-left: -5px;
+//   }
+//   .form-control {
+//     display: block;
+//     /*width: 280px;*/
+//     height: 55px;
+//     padding: 3px 15px;
+//     font-size: 16px;
+//     line-height: 1.42857143;
+//     color: #8b8888;
+//     background-color: #fff;
+//     background-image: none;
+//     /*border: 1px solid white;*/
+//     border: white;
+//     border-radius: 5px;
+//   }
+//   .forward-icon {
+//     margin-top: 18px;
+//     margin-left: -10px;
+//   }
+// }
+
+//Nexus 5X , Nexus 6P //Getting Overided
+// @media only screen and (min-width: 412px) and (min-height: 732px) {
+//   // .main-container {
+//   //   padding-top: 20px;
+//   //   // padding-left: 15px;
+//   //   padding-left: 25px;
+//   //   padding-right: 10px;
+//   //   background-color: #f4e3e3;
+//   //   height: 100%;
+//   // }
+//   // .input-field-width {
+//   //   width: 350px;
+//   // }
+// }
+//Nexus 5X
+// @media only screen and (min-width: 412px) and (min-height: 732px) {
+// }
+
+//Apple Iphone 6/7/8 Plus
+// @media only screen and (min-width: 414px) and (min-height: 736px) {
+// }
+
+//Nokia Lumia 520
+@media only screen and (min-width: 320px) and (min-height: 533px) {
+}
+
+//Apple 5/SE
+@media only screen and (min-width: 320px) and (min-height: 568px) {
+}
+
+//Galaxy Note 3 //Galaxy Note 2 // Galaxy S3 //Galaxy S5// Blackberry
+@media only screen and (min-width: 600px) and (min-height: 1024px) {
+  .form-control {
+    display: block;
+    height: 86px;
+    padding: 3px 15px;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #8b8888;
+    background-color: #fff;
+    background-image: none;
+    border: white;
+    border-radius: 5px;
+  }
+  .forward-icon {
+    margin-top: 20px;
+    margin-left: -10px;
+  }
+}
+
+//Apple 6/7/8
+@media only screen and (min-width: 375px) and (min-height: 667px) {
+  .form-control {
+    display: block;
+    height: 40px;
+    padding: 3px 15px;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #8b8888;
+    background-color: #fff;
+    background-image: none;
+    border: white;
+    border-radius: 5px;
+  }
+}
+
+//Apple Iphone X
+@media only screen and (min-width: 375px) and (min-height: 812px) {
+  .form-control {
+    display: block;
+    height: 60px;
+    padding: 3px 15px;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #8b8888;
+    background-color: #fff;
+    background-image: none;
+    border: white;
+    border-radius: 5px;
+  }
+  .forward-icon {
+    margin-top: 10px;
+    margin-left: -10px;
+  }
+}
+
+//LG Optimus -Nexus 4
+@media only screen and (min-width: 384px) and (min-height: 640px) {
+}
+
+//Pixel 2
+@media only screen and (min-width: 411px) and (min-height: 731px) {
+  .form-control {
+    display: block;
+    height: 45px;
+    padding: 3px 15px;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #8b8888;
+    background-color: #fff;
+    background-image: none;
+    border: white;
+    border-radius: 5px;
+  }
+  .forward-icon {
+    margin-top: 20px;
+    margin-left: -10px;
+  }
+}
+
+//Pixel 2 XL
+@media only screen and (min-width: 411px) and (min-height: 823px) {
+  .form-control {
+    display: block;
+    height: 59px;
+    padding: 3px 15px;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #8b8888;
+    background-color: #fff;
+    background-image: none;
+    border: white;
+    border-radius: 5px;
+  }
+}
+
+//Nexus 5X - Nexus 6P
+@media only screen and (min-width: 412px) and (min-height: 732px) {
+  .form-control {
+    display: block;
+    height: 45px;
+    padding: 3px 15px;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #8b8888;
+    background-color: #fff;
+    background-image: none;
+    border: white;
+    border-radius: 5px;
+  }
+}
+
+//Apple Iphone 6/7/8 Plus
+@media only screen and (min-width: 414px) and (min-height: 736px) {
+  .form-control {
+    display: block;
+    height: 47px;
+    padding: 3px 15px;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #8b8888;
+    background-color: #fff;
+    background-image: none;
+    border: white;
+    border-radius: 5px;
+  }
+}
+
+//Apple Iphone 6/7/8 Plus
+@media only screen and (min-width: 480px) and (min-height: 854px) {
+  .form-control {
+    display: block;
+    height: 65px;
+    padding: 3px 15px;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #8b8888;
+    background-color: #fff;
+    background-image: none;
+    border: white;
+    border-radius: 5px;
+  }
+  .forward-icon {
+    margin-top: 10px;
+    margin-left: -10px;
+  }
+}
+
+//Nexus 7
+@media only screen and (min-width: 600px) and (min-height: 960px) {
+  .form-control {
+    display: block;
+    height: 80px;
+    padding: 3px 15px;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #8b8888;
+    background-color: #fff;
+    background-image: none;
+    border: white;
+    border-radius: 5px;
+  }
+  .forward-icon {
+    margin-top: 15px;
+    margin-left: -10px;
+  }
+}
+
+//Kindle Fire HDX ,BLackbery Play Book
+// @media only screen and (min-width: 600px) and (min-height: 1024px) {
+//}
+
+//Ipad
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+  .form-control {
+    display: block;
+    height: 85px;
+    padding: 3px 15px;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #8b8888;
+    background-color: #fff;
+    background-image: none;
+    border: white;
+    border-radius: 5px;
+  }
+  .forward-icon {
+    margin-top: 30px;
+    margin-left: -10px;
+  }
+}
+
+//Kindle Fire HDX
+@media only screen and (min-width: 800px) and (min-height: 1280px) {
+  .form-control {
+    display: block;
+    height: 123px;
+    padding: 3px 15px;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #8b8888;
+    background-color: #fff;
+    background-image: none;
+    border: white;
+    border-radius: 5px;
+  }
+  .otp {
+    width: 100%;
+    padding: 3px 20px;
+    margin: 0px 0px;
+  }
+}
+
+//Ipad Pro
+@media only screen and (min-width: 1024px) and (min-height: 1366px) {
+  .forward-icon {
+    margin-top: 80px;
+    margin-left: -10px;
+  }
+}
+
+//Laptop with touch
+@media only screen and (min-width: 1280px) and (min-height: 950px) {
+  .form-control {
+    display: block;
+    height: 75px;
+    padding: 3px 15px;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #8b8888;
+    background-color: #fff;
+    background-image: none;
+    border: white;
+    border-radius: 5px;
+  }
+  .forward-icon {
+    margin-top: 25px;
+    margin-left: -10px;
+  }
+}
+.telclass {
+  -webkit-text-security: disc;
+  -moz-webkit-text-security: disc;
+  -moz-text-security: disc;
+}
+//Ipad Pro  #Check
+@media only screen and (min-width: 1366px) and (min-height: 1024px) {
+}

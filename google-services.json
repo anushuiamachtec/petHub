@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "892228559281",
+    "firebase_url": "https://petapp-d33ab.firebaseio.com",
+    "project_id": "petapp-d33ab",
+    "storage_bucket": "petapp-d33ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892228559281:android:3c5f4fdd0b6006d8911d90",
+        "android_client_info": {
+          "package_name": "com.petapp.demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "892228559281-7jq5vj2ftk1iep2tulr32b6a0h9popil.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOMWaBSnswFhlue2Tno6VgTDXMwuQn1c0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "892228559281-7jq5vj2ftk1iep2tulr32b6a0h9popil.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

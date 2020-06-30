@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title class="ion-text-left">
+      <img [src]="user.images[0].filepath" class="profile-img">
+      <span class="username" *ngIf="user.from == 'notification'">{{user?.otherUserId}}</span>
+      <span class="username" *ngIf="user.from != 'notification'">{{user?.userId}}</span>
+
+      <span class="status-chat" *ngIf="client_typing">Typing...</span>
+      <span class="status-chat" *ngIf="online && !client_typing">Online</span>
+      <span class="status-chat" *ngIf="!online && !client_typing">Offline</span>
+    </ion-title>
+    <button (click)="CallSelect()">select</button><br>
+    <button (click)="clearAll()">clearAll</button>
+    <button *ngIf="checksonce" (click)="deleteAll()">delete</button>
+  </ion-toolbar>
+</ion-header>
+<ion-content #content class="p-left10 p-right10 hdr">
+  <ion-list id="chatList" class="background-none cnt" lines="none">
+    <div *ngFor="let chat of allChats">
+      <ion-item *ngIf="chat.userId!==msg.userId" class="background-none left-chat">
+        <!-- <ion-thumbnail slot="start">
+          <img [src]="user.images[0].filepath"/>
+        </ion-thumbnail> -->
+        <ion-label>
+          <p style="white-space: pre;" *ngIf="chat.messageType=='TEXT'">{{chat.message}}</p>
+          <p *ngIf="chat.messageType=='IMAGE'" class="img-w" (click)="imagePopup(chat)"><img src="{{chat.message}}"
+              width="200" /></p>
+          <span>{{chat.created_at | date:'hh:mm a'}}</span>
+        </ion-label>
+      </ion-item>
+      <ion-item *ngIf="chat.userId===msg.userId" class="background-none right-chat">
+        <!-- <ion-thumbnail slot="end">
+            <img [src]="loginUser.images[0].filepath" />
+          </ion-thumbnail> -->
+        <ion-label>
+          <p style="white-space: pre;" *ngIf="chat.messageType=='TEXT'">{{chat.message}}</p>
+          <p *ngIf="chat.messageType=='IMAGE'" class="img-w" (click)="imagePopup(chat)"><img src="{{chat.message}}"
+              style="width: 100%;" /></p><ion-checkbox *ngIf = "checksonce" (click)="pushId(chat._id, i,chat)"></ion-checkbox>
+          <span>{{chat.created_at | date:'hh:mm a'}}</span>
+        </ion-label>
+
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>
+
+<ion-footer transparent>
+  <ion-item color="dark-black">
+    <!-- <ion-icon item-start class="fii icon-Asset-32" ></ion-icon> -->
+    <!-- <ion-icon item-start name="cloud-upload" (click)="uploadPicture()" class="cloudupload"></ion-icon> -->
+
+    <!-- <input #input (focus)="setKeybord()" (blur)="setKeybord()" id="inputID" [(ngModel)]="message" type="text" placeholder="Type your message here"
+           (keyup.enter)="sendMessage()"/> -->
+      <textarea  #input id="inputID" [(ngModel)]="message" type="text" (keyup)="keydown($event)" placeholder="Type your message here"></textarea>
+
+
+    <span item-end>
+      <label (click)="sendMessage()" for="inputID" class="send-chat">
+        <!-- <ion-icon class="fii2 icon-send-ico"></ion-icon> -->
+        <ion-icon name="send"></ion-icon>
+      </label>
+    </span>
+  </ion-item>
+</ion-footer>

@@ -1,0 +1,148 @@
+<ion-header>
+  <h4> <span><img [routerLink]="['/home']" src="../../../assets/icon/left-arrow.png"></span>
+    {{singlePet.petId}}</h4>
+  <!-- <div class="imag-sect" [style.background-image]="'url(www.domain.com/path/'+bgImageVariable+')'"> -->
+    <!-- <img src="../../assets/icon/dogs3.jpg"> -->
+    <ion-slides  >
+      <ion-slide *ngFor = "let singlepet of singlePet.images" class="singlePetProfile" style="height:250px;width:300px;" [ngStyle]="{'background': 'url(' + singlepet.filepath + ') no-repeat 0 0 / cover'}"  >
+       </ion-slide>
+    </ion-slides>
+
+  <!-- </div> -->
+</ion-header>
+<ion-content padding [fullscreen]="true">
+  <div class="basic-table-info">
+    <h4>{{singlePet.pet_name}}-({{singlePet.pet_breed}})</h4>
+    <p>{{singlePet.petId}} | {{singlePet.pet_age}} Yrs,
+      Chennai</p>
+  </div>
+  <div class="button-section">
+    <button><i class="fa fa-heart-o" aria-hidden="true"></i>
+      Add To Favourite</button>
+    <button data-toggle="modal" data-target="#myModal"><i class="fa fa-commenting-o" aria-hidden="true"></i>Message</button>
+  </div>
+  <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+  <button (click)="chatDetail(singlePet)"><i class="fa fa-heart-o" aria-hidden="true"></i>
+    Chat</button>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"> Send Message To {{userData.userId}}</h4>
+      </div>
+      <div class="modal-body">
+<div class="card" >
+    <ion-label>Enter Drop Message</ion-label>
+   <ion-textarea rows="4" cols="50" [(ngModel)]="MessageContent"></ion-textarea>
+   <div class="submit-btn">
+   <button (click)="sendMsg()" data-dismiss="modal"><i class="fa fa-send"></i>&nbsp;Send</button>&nbsp;
+           <button type="button" data-dismiss="modal">Close</button>
+           </div>
+
+  </div>      </div>
+       </div>
+
+  </div>
+</div>
+  <div class="owner-section">
+    <h4>About Owner Details <button data-toggle="collapse" data-target="#demo"><i class="fa fa-eye"></i></button></h4>
+    <div  id="demo" class="collapse owner-sec-part">
+      <ul>
+        <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+          <label>Name<br /><span>{{singlePet.ownerdetails.ownerName}}</span></label>
+        </li>
+        <li><i class="fa fa-check" aria-hidden="true"></i> &nbsp;
+          <label>Email<br /><span>{{singlePet.ownerdetails.email}}</span></label>
+        </li>
+        <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;
+          <label>Mobile Number<br /><span>{{singlePet.ownerdetails.mobile_number}}</span></label>
+        </li>
+      </ul>
+    </div>
+    <div class="owner-sec-part">
+      <h4>Basic Pet Details</h4>
+      <ul>
+        <li><i class="fa fa-check" aria-hidden="true"></i>
+          &nbsp;
+          <label>Name
+            <br /><span>Nogu Dogs</span></label></li>
+        <li><i class="fa fa-check" aria-hidden="true"></i>
+          &nbsp;
+          <label>Age
+            <br /><span>{{singlePet.pet_age}} Yrs</span></label></li>
+        <li><i class="fa fa-check" aria-hidden="true"></i>
+          &nbsp;
+          <label>Breed
+            <br /><span>{{singlePet.pet_breed}}</span></label></li>
+        <li><i class="fa fa-check" aria-hidden="true"></i>
+          &nbsp;
+          <label>Dob
+            <br /><span>{{singlePet.pet_dob}}</span></label></li>
+        <li><i class="fa fa-check" aria-hidden="true"></i>
+          &nbsp;
+          <label>Weight
+            <br /><span>{{singlePet.pet_weight}} Kg</span></label></li>
+        <li><i class="fa fa-check" aria-hidden="true"></i>
+          &nbsp;
+          <label>Gender
+            <br /><span>{{singlePet.pet_gender}}</span></label></li>
+        <li><i class="fa fa-check" aria-hidden="true"></i>
+          &nbsp;
+          <label>category
+            <br /><span>{{singlePet.category}}</span></label></li>
+
+        <li><i class="fa fa-check" aria-hidden="true"></i>
+          &nbsp;
+          <label>Description
+            <br /><span>{{singlePet.pet_description}}</span></label></li>
+
+      </ul>
+    </div>
+
+    <div class="owner-sec-part">
+      <h4>Owner Expectations</h4>
+      <ul>
+        <li><i class="fa fa-check" aria-hidden="true"></i>
+          &nbsp;
+          <label>dating
+            <br /><span>{{userData.petoptions.dating}}</span></label></li>
+        <li><i class="fa fa-check" aria-hidden="true"></i>
+          &nbsp;
+          <label>adoption
+            <br /><span>{{userData.petoptions.adoption}}</span></label></li>
+
+
+        <li><i class="fa fa-check" aria-hidden="true"></i>
+          &nbsp;
+          <label>puppyadd
+            <br /><span>{{userData.petoptions.puppyadd}}</span></label></li>
+        <li><i class="fa fa-check" aria-hidden="true"></i>
+          &nbsp;
+          <label>puppybuy
+            <br /><span>{{userData.petoptions.puppybuy}}</span></label></li>
+      </ul>
+    </div>
+  </div>
+
+
+</ion-content>
+<ion-footer class="footer-serch">
+  <!-- <ion-toolbar> -->
+  <!-- <ion-title>Footer</ion-title> -->
+  <div class="footer-profile">
+    <div class="text-left">
+      Like Profile
+    </div>
+    <div class="text-right footer1">
+      <button style="background-color: transparent;" (click)="AddFav(pairpet, true)"
+        class="locate1 left-fav btn-primary text-right" (click)="purchaseStore(shop)"><i class="fa fa-heart-o"
+          aria-hidden="true"></i>
+        Add To Favourite</button>
+    </div>
+  </div>
+  <!-- </ion-toolbar> -->
+</ion-footer>
